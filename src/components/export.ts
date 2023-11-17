@@ -50,11 +50,16 @@ export { SearchOption } from './searchPage/optionsInformation/searchOption/searc
 export { searchResultsCard } from './searchPage/searchResultsCard/searchResultsCard'
 
 //Product detail
-export {ProductDetail} from '../pages/productDetail/productDetail'
+export { ProductDetail } from '../pages/productDetail/productDetail'
 export { ProductDetailCard } from './productdetailcomp/productdetailcard/productdetailcard'
-export {ProductDetailComments} from './productdetailcomp/productdetailcomment/productdetailcomment'
+export { ProductDetailComments } from './productdetailcomp/productdetailcomment/productdetailcomment'
 
 //Shooping List
 export { ShopingList } from '../pages/shopingList/shopingList'
 export { ShopingListCard } from './shoopingPage/shopingListCard/shopingListCard'
 export { PurchaseSummary } from './shoopingPage/purchaseSummary/purchaseSummary'
+
+//User Information
+export { userInformationPage } from '../pages/userInformationPage/userInformationPage'
+export { userInfoTitle } from './userInformationPage/userInfoTitle/userInfoTitle'
+export { userInfoRest } from './userInformationPage/userInfoRest/userInfoRest'

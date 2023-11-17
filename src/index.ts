@@ -51,6 +51,9 @@ class AppContainer extends HTMLElement {
                 case Screens.productDetail:
                     const productDetail = this.ownerDocument.createElement("product-detail")
                     this.shadowRoot.appendChild(productDetail)
+                case Screens.userInformation:
+                    const userInformation = this.ownerDocument.createElement("userinformationpage-page")
+                    this.shadowRoot.appendChild(userInformation)
                 default:
                     break;
             }

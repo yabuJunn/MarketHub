@@ -6,7 +6,8 @@ export enum Screens {
     "forgotPassword" = "forgotPassword",
     "searchPage" = "searchPage",
     "shopingList" = "shopingList",
-    "productDetail" = "productDetail"
+    "productDetail" = "productDetail",
+    "userInformation" = "userInformation"
 }
 
 export interface product {

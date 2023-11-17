@@ -68,6 +68,12 @@ export class NavBarWhite extends HTMLElement {
                     changeScreen(Screens.mainPage)
                 )
             })
+
+            userButton.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.userInformation)
+                )
+            })
         }
     }
 }
