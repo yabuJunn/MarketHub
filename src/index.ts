@@ -40,6 +40,17 @@ class AppContainer extends HTMLElement {
                     const forgotPasswordPage = this.ownerDocument.createElement("forgotpassword-page")
                     this.shadowRoot.appendChild(forgotPasswordPage)
                     break;
+                case Screens.searchPage:
+                    const searchPage = this.ownerDocument.createElement("search-page")
+                    this.shadowRoot.appendChild(searchPage)
+                    break;
+                case Screens.shopingList:
+                    const shopingList = this.ownerDocument.createElement("shoping-list")
+                    this.shadowRoot.appendChild(shopingList)
+                    break;
+                case Screens.productDetail:
+                    const productDetail = this.ownerDocument.createElement("product-detail")
+                    this.shadowRoot.appendChild(productDetail)
                 default:
                     break;
             }

@@ -7,7 +7,16 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
         ...currentState,
         screen: action.payload
       };
-
+    case Actions.CHANGE_SEARCH_TEXT:
+      return {
+        ...currentState,
+        searchText: action.payload
+      };
+    case Actions.CHANGE_VIEW_PRODUCT:
+      return {
+        ...currentState,
+        viewProduct: action.payload
+      };
     default:
       return currentState;
   }
