@@ -28,9 +28,22 @@ export class uploadProductPage extends HTMLElement {
             uploadProductContainer.setAttribute("id", "uploadProductContainer")
             mainContainer.appendChild(uploadProductContainer)
 
+            const inputImageContainer = this.ownerDocument.createElement("div")
+            inputImageContainer.setAttribute("id", "inputImageContainer")
+            uploadProductContainer.appendChild(inputImageContainer)
+
             const divInputImage = this.ownerDocument.createElement("div")
             divInputImage.setAttribute("id", "divInputImage")
-            uploadProductContainer.appendChild(divInputImage)
+            divInputImage.style.backgroundImage = "url(/src/resources/svg/navIcons/dark/uploadDark.svg)"
+            inputImageContainer.appendChild(divInputImage)
+
+            const inputImage = this.ownerDocument.createElement("input")
+            inputImage.setAttribute("type", "file")
+            divInputImage.appendChild(inputImage)
+
+            const inputImageMessage = this.ownerDocument.createElement("p")
+            inputImageMessage.innerText = "No file selected"
+            inputImageContainer.appendChild(inputImageMessage)
 
             const containerProductInputs = this.ownerDocument.createElement("div")
             containerProductInputs.setAttribute("id", "containerProductInputs")
@@ -67,7 +80,7 @@ export class uploadProductPage extends HTMLElement {
 
             const priceInput = this.ownerDocument.createElement("input")
             priceInput.setAttribute("type", "number")
-            priceInput.setAttribute("placeholder", "Describe for what purpose you created the product")
+            priceInput.setAttribute("placeholder", "Set price")
             priceContainer.appendChild(priceInput)
 
             const priceUp = this.ownerDocument.createElement("button")
