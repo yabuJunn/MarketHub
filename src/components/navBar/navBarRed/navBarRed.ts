@@ -69,6 +69,12 @@ export class NavBarRed extends HTMLElement {
                     changeScreen(Screens.mainPage)
                 )
             })
+
+            userButton.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.userInformation)
+                )
+            })
         }
     }
 }
