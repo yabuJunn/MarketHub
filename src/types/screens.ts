@@ -7,7 +7,8 @@ export enum Screens {
     "searchPage" = "searchPage",
     "shopingList" = "shopingList",
     "productDetail" = "productDetail",
-    "userInformation" = "userInformation"
+    "userInformation" = "userInformation",
+    "uploadProduct" = "uploadProduct"
 }
 
 export interface product {

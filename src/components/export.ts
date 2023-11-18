@@ -63,3 +63,6 @@ export { PurchaseSummary } from './shoopingPage/purchaseSummary/purchaseSummary'
 export { userInformationPage } from '../pages/userInformationPage/userInformationPage'
 export { userInfoTitle } from './userInformationPage/userInfoTitle/userInfoTitle'
 export { userInfoRest } from './userInformationPage/userInfoRest/userInfoRest'
+
+//Upload Product
+export { uploadProductPage } from '../pages/uploadProductPage/uploadProductPage'
