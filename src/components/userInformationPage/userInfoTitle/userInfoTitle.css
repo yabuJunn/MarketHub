@@ -1,3 +1,8 @@
+@font-face {
+    font-family: REM;
+    src: url(/src/resources/fonts/REM/REM-VariableFont_wght.ttf);
+}
+
 @media (max-width: 1600px) {
     #userInfoTitleContainer {
         width: 90%;

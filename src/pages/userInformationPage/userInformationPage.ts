@@ -29,7 +29,21 @@ export class userInformationPage extends HTMLElement {
 
             const userInfoRest = this.ownerDocument.createElement("userinfo-rest")
             mainContainer.appendChild(userInfoRest)
-        }
+
+            const buttonsContainer = this.ownerDocument.createElement("div")
+            buttonsContainer.setAttribute("id", "buttonsContainer")
+            mainContainer.appendChild(buttonsContainer)
+
+            const buttonChangeData = this.ownerDocument.createElement("button")
+            buttonChangeData.setAttribute("id", "buttonChangeData")
+            buttonChangeData.innerText = "Change your data"
+            buttonsContainer.appendChild(buttonChangeData)
+
+            const buttonLogOut = this.ownerDocument.createElement("button")
+            buttonLogOut.setAttribute("id", "buttonLogOut")
+            buttonLogOut.innerText = "LOG OUT"
+            buttonsContainer.appendChild(buttonLogOut)
+        }  
     }
 }
 
