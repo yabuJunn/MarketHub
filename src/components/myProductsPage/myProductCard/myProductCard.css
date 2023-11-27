@@ -1,0 +1,100 @@
+@font-face {
+    font-family: REM;
+    src: url(/src/resources/fonts/REM/REM-VariableFont_wght.ttf);
+}
+
+@media (max-width: 1600px) {
+    .myProductCardContainer {
+        width: 100%;
+        border-radius: 15px;
+        background-color: #F7F4F3;
+        box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        display: flex;
+    }
+
+    .myProductCardContainer h1,
+    h2,
+    h3,
+    h4,
+    p {
+        margin: 0;
+    }
+
+    .productImage {
+        width: 18%;
+        aspect-ratio: 1 / 1;
+        background-size: cover;
+        background-position: center;
+        border-radius: 15px;
+    }
+
+    .productInfoContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    .productInfoContainer h2 {
+        color: #F24333;
+        font-family: REM;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .productInfoContainer p {
+        color: #564D4A;
+        font-family: REM;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 10px 0 0 0;
+    }
+
+    .priceAndInfoContainer {
+        display: flex;
+    }
+
+    .priceAndInfoContainer h3 {
+        color: #564D4A;
+        font-family: REM;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: 5px 0 0 0;
+    }
+
+    .priceAndInfoContainer p {
+        color: #564D4A;
+        font-family: REM;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 5px 0 0 0;
+    }
+
+    .priceContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttonContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .buttonContainer p {
+        color: #5F2122;
+        font-family: REM;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: 5px 10px 0 0;
+    }
+}

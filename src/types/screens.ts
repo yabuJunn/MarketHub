@@ -10,8 +10,8 @@ export enum Screens {
     "userInformation" = "userInformation",
     "uploadProduct" = "uploadProduct",
     "shoopingList" = "shoopingList",
-    "paymentPage" = "paymentPage"
-    "shoopingList" = "shoopingList"
+    "paymentPage" = "paymentPage",
+    "myProductsPage" = "myProductsPage"
 }
 
 export interface product {

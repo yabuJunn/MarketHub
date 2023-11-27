@@ -17,14 +17,12 @@
     #summaryPaymentContainer {
         width: 30%;
         min-height: 100vh;
-        border: 2px solid purple;
         margin: 0 15px 0 0;
     }
 
     #paymentMenuContainer {
         width: 60%;
-        min-height: 100vh;
-        border: 2px solid purple;
+        min-height: 100vh; 
         margin: 0 0 0 15px;
     }
 }
