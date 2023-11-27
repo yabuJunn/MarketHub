@@ -1,0 +1,78 @@
+@font-face {
+    font-family: REM;
+    src: url(/src/resources/fonts/REM/REM-VariableFont_wght.ttf);
+}
+
+@media (max-width: 1600px) {
+    #paymentMenuContainer {
+        width: 100%;
+        border-radius: 22px;
+        background: #F7F4F3;
+        padding: 15px 0 15px 0;
+    }
+
+    #paymentMenuContainer h1,
+    h2,
+    h3,
+    p {
+        margin: 0;
+    }
+
+    #paymentMenuContainer h1 {
+        color: #F24333;
+        font-family: REM;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0 0 0 15px;
+    }
+
+    #paymentMenuContainer h2 {
+        color: #564D4A;
+        font-family: REM;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0 0 0 15px;
+    }
+
+    #paymentMenuContainer select {
+        width: 20%;
+        background-color: #F24333;
+        border: none;
+        color: #F7F4F3;
+        font-family: REM;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border-radius: 5px;
+        margin: 10px 0 0 15px;
+        padding: 2px;
+    }
+
+    #paymentMenuContainer p {
+        color: var(--Dark, #564D4A);
+        font-family: REM;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 10px 0 0 15px;
+    }
+
+    #paymentMenuContainer button {
+        border-radius: 30px;
+        background: #564D4A;
+        color: #F7F4F3;
+        font-family: REM;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 10px 30px 10px 30px;
+        margin: 20px 0 0 15px;
+    }
+}

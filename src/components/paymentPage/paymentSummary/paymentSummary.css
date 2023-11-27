@@ -1,0 +1,104 @@
+@font-face {
+    font-family: REM;
+    src: url(/src/resources/fonts/REM/REM-VariableFont_wght.ttf);
+}
+
+@media (max-width: 1600px) {
+    #mainContainer {
+        width: 100%;
+        border-radius: 22px;
+        background: #F7F4F3;
+        padding: 15px 0 15px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: sticky;
+    }
+
+    #mainContainer h2,
+    h3,
+    p {
+        margin: 0;
+    }
+
+    #mainContainer h2 {
+        color: #F24333;
+        font-family: REM;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        width: 90%;
+    }
+
+    .infoContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: 10px 0 0 0;
+    }
+
+    .infoContainer h3 {
+        color: #564D4A;
+        font-family: REM;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .infoContainer p {
+        color: #564D4A;
+        text-align: right;
+        font-family: REM;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .infoContainerTotal {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: 10px 0 0 0;
+    }
+
+    .infoContainerTotal h3 {
+        color: #564D4A;
+        font-family: REM;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .infoContainerTotal p {
+        color: #564D4A;
+        text-align: right;
+        font-family: REM;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    #mainContainer button {
+        margin: 10px 15px 0 15px;
+        width: 90%;
+        height: 20%;
+        border-radius: 12px;
+        background-color: #F7F4F3;
+        border: none;
+
+        color: #F24333;
+        text-align: center;
+        font-family: REM;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+}

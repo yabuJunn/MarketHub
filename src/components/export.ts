@@ -70,4 +70,9 @@ export { uploadProductPage } from '../pages/uploadProductPage/uploadProductPage'
 //Shooping List
 export { shoopingListPage } from '../pages/shoopingListPage/shoopingListPage'
 export { purchaseSummaryCartList } from './shoopingListPage/purchaseSummary/purchaseSummary'
-export { shoopinListCard } from './shoopingListPage/shoopinListCard/shoopinListCard' //"shoopin_list-card"
+export { shoopinListCard } from './shoopingListPage/shoopinListCard/shoopinListCard' //shoopin_list-card
+
+//Payment Page
+export { paymentPage } from '../pages/paymentPage/paymentPage'
+export { paymentSummary } from './paymentPage/paymentSummary/paymentSummary' //payment_summary-payment_page
+export { paymentMenu } from './paymentPage/paymentMenu/paymentMenu' //payment-menu
