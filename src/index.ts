@@ -68,6 +68,9 @@ class AppContainer extends HTMLElement {
                     const paymentPage = this.ownerDocument.createElement("payment-page")
                     this.shadowRoot.appendChild(paymentPage)
                     break
+                case Screens.myProductsPage:
+                    const myProductsPage = this.ownerDocument.createElement("my_products-page")
+                    this.shadowRoot.appendChild(myProductsPage)
                 default:
                     break;
             }

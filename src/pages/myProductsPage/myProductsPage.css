@@ -1,0 +1,75 @@
+@font-face {
+    font-family: REM;
+    src: url(/src/resources/fonts/REM/REM-VariableFont_wght.ttf);
+}
+
+@media (max-width: 1600px) {
+    #myProductsPage {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 130px 0 0 0;
+        background-color: #F24333;
+    }
+
+    #pageTitleContainer {
+        width: 92%;
+        height: 100px;
+        border-radius: 23px;
+        background-color: #F7F4F3;
+        box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    #pageTitleContainer h1,
+    h2,
+    h3,
+    h4,
+    p {
+        margin: 0;
+    }
+
+    #pageTitleContainer h1 {
+        color: #F24333;
+        font-family: REM;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 15px 0 0 15px;
+    }
+
+    #pageTitleContainer p {
+        color: #564D4A;
+        font-family: REM;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 0 0 0 15px;
+    }
+
+    #cardsAndInfoContainer {
+        border: 1px solid purple;
+        width: 92%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        margin: 40px 0 0 0;
+    }
+
+    #myProductsCardsContainer {
+        width: 72%;
+        border: 1px solid #F7F4F3;
+        min-height: 100vh;  
+        margin: 0 15px 0 0;
+    }
+
+    #moreInfoContainer {
+        width: 28%;
+        border: 1px solid #F7F4F3;
+        min-height: 100vh;
+        margin: 0 0 0 15px;
+    }
+}

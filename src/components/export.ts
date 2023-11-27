@@ -76,3 +76,9 @@ export { shoopinListCard } from './shoopingListPage/shoopinListCard/shoopinListC
 export { paymentPage } from '../pages/paymentPage/paymentPage'
 export { paymentSummary } from './paymentPage/paymentSummary/paymentSummary' //payment_summary-payment_page
 export { paymentMenu } from './paymentPage/paymentMenu/paymentMenu' //payment-menu
+
+//My products Page
+export { myProductsPage } from '../pages/myProductsPage/myProductsPage' //my_products-page
+export { myProductsTotalProducts } from './myProductsPage/myProductsTotalProducts/myProductsTotalProducts' //my_products-total_products
+export { myProductsSearch } from './myProductsPage/myProductsSearch/myProductsSearch' //my_products-search
+export { myProductCard } from './myProductsPage/myProductCard/myProductCard' //my_product-card
