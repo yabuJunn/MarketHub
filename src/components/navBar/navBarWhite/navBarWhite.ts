@@ -74,6 +74,18 @@ export class NavBarWhite extends HTMLElement {
                     changeScreen(Screens.userInformation)
                 )
             })
+
+            uploadButton.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.uploadProduct)
+                )
+            })
+
+            cartButton.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.shoopingList)
+                )
+            })
         }
     }
 }

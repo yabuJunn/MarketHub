@@ -57,6 +57,9 @@ class AppContainer extends HTMLElement {
                 case Screens.uploadProduct:
                     const uploadProduct = this.ownerDocument.createElement("uploadproduct-page")
                     this.shadowRoot.appendChild(uploadProduct)
+                    case Screens.shoopingList:
+                        const shoopingListPage = this.ownerDocument.createElement("shooping_list-page")
+                        this.shadowRoot.appendChild(shoopingListPage)
                 default:
                     break;
             }
