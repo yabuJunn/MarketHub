@@ -10,7 +10,13 @@ export class NavBarRed extends HTMLElement {
     }
 
     connectedCallback() {
-        this.render();
+        this.mount();
+        
+    }
+
+    mount() {
+        this.render()
+        const logo = this.shadowRoot?.getElementById("logo")
     }
 
     render() {
@@ -73,6 +79,18 @@ export class NavBarRed extends HTMLElement {
             userButton.addEventListener("click", () => {
                 dispatch(
                     changeScreen(Screens.userInformation)
+                )
+            })
+
+            uploadButton.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.uploadProduct)
+                )
+            })
+
+            cartButton.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.shoopingList)
                 )
             })
         }
