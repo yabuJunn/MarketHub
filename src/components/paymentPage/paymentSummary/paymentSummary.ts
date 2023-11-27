@@ -3,7 +3,7 @@ import { changeScreen } from "../../../store/actions"
 import { Screens } from "../../../types/screens"
 import "../../export"
 
-export class purchaseSummaryCartList extends HTMLElement {
+export class paymentSummary extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: "open" })
@@ -17,16 +17,16 @@ export class purchaseSummaryCartList extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/shoopingListPage/purchaseSummary/purchaseSummary.css")
+            link.setAttribute("href", "/src/components/paymentPage/paymentSummary/paymentSummary.css")
             this.shadowRoot?.appendChild(link)
 
             const mainContainer = this.ownerDocument.createElement("div")
             mainContainer.setAttribute("id", "mainContainer")
             this.shadowRoot.appendChild(mainContainer)
 
-            const summaryTitle = this.ownerDocument.createElement("h2")
-            summaryTitle.innerText = "Summary of purchase"
-            mainContainer.appendChild(summaryTitle)
+            const paymentTitle = this.ownerDocument.createElement("h2")
+            paymentTitle.innerText = "Summary of purchase"
+            mainContainer.appendChild(paymentTitle)
 
             //Products
             const containerProducts = this.ownerDocument.createElement("div")
@@ -66,18 +66,9 @@ export class purchaseSummaryCartList extends HTMLElement {
             const totalPrice = this.ownerDocument.createElement("p")
             totalPrice.innerText = "$87.823"
             containerTotal.appendChild(totalPrice)
-
-            const purchaseButton = this.ownerDocument.createElement("button")
-            purchaseButton.innerText = "PURCHASE"
-            mainContainer.appendChild(purchaseButton)
-            purchaseButton.addEventListener("click", () => {
-                dispatch(
-                    changeScreen(Screens.paymentPage)
-                )
-            })
         }
 
     }
 }
 
-customElements.define("purchase_summary-cart_list", purchaseSummaryCartList)
+customElements.define("payment_summary-payment_page", paymentSummary)

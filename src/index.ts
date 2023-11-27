@@ -51,12 +51,23 @@ class AppContainer extends HTMLElement {
                 case Screens.productDetail:
                     const productDetail = this.ownerDocument.createElement("product-detail")
                     this.shadowRoot.appendChild(productDetail)
+                    break
                 case Screens.userInformation:
                     const userInformation = this.ownerDocument.createElement("userinformationpage-page")
                     this.shadowRoot.appendChild(userInformation)
+                    break
                 case Screens.uploadProduct:
                     const uploadProduct = this.ownerDocument.createElement("uploadproduct-page")
                     this.shadowRoot.appendChild(uploadProduct)
+                    break
+                case Screens.shoopingList:
+                    const shoopingListPage = this.ownerDocument.createElement("shooping_list-page")
+                    this.shadowRoot.appendChild(shoopingListPage)
+                    break
+                case Screens.paymentPage:
+                    const paymentPage = this.ownerDocument.createElement("payment-page")
+                    this.shadowRoot.appendChild(paymentPage)
+                    break
                     case Screens.shoopingList:
                         const shoopingListPage = this.ownerDocument.createElement("shooping_list-page")
                         this.shadowRoot.appendChild(shoopingListPage)

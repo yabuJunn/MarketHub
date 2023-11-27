@@ -9,6 +9,8 @@ export enum Screens {
     "productDetail" = "productDetail",
     "userInformation" = "userInformation",
     "uploadProduct" = "uploadProduct",
+    "shoopingList" = "shoopingList",
+    "paymentPage" = "paymentPage"
     "shoopingList" = "shoopingList"
 }
 
