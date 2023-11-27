@@ -70,7 +70,6 @@ export class purchaseSummaryCartList extends HTMLElement {
             const purchaseButton = this.ownerDocument.createElement("button")
             purchaseButton.innerText = "PURCHASE"
             mainContainer.appendChild(purchaseButton)
-
             purchaseButton.addEventListener("click", () => {
                 dispatch(
                     changeScreen(Screens.paymentPage)
