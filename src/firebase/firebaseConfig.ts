@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyDUPLn5brG4-Mh64UVuhs9KUTbJjXKx2I4",
-    authDomain: "markethub---algoritmos.firebaseapp.com",
-    projectId: "markethub---algoritmos",
-    storageBucket: "markethub---algoritmos.appspot.com",
-    messagingSenderId: "993205473828",
-    appId: "1:993205473828:web:9157c9fe17c17112f6feb1"
-};
+    apiKey: "AIzaSyBmVrQiwUaQzcqVryclVK7gqKQ_NkgZiUk",
+    authDomain: "markethub-ba8c0.firebaseapp.com",
+    projectId: "markethub-ba8c0",
+    storageBucket: "markethub-ba8c0.appspot.com",
+    messagingSenderId: "523379250459",
+    appId: "1:523379250459:web:0148574d90751c47a2afbe"
+  };
