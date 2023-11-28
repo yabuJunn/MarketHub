@@ -17,6 +17,16 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
         ...currentState,
         viewProduct: action.payload
       };
+    case Actions.SIDE_MENU_VISIBILITY:
+      return {
+        ...currentState,
+        sideMenu: action.payload
+      };
+    case Actions.CHANGE_LOGED_USER:
+      return {
+        ...currentState,
+        logedUserID: action.payload
+      };
     default:
       return currentState;
   }

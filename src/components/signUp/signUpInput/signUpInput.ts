@@ -1,3 +1,4 @@
+import { registerData } from "../../../utilities/registerData";
 import "../../export";
 
 const enum SignUpInputProperties {
@@ -10,18 +11,18 @@ export class SignUpInput extends HTMLElement {
         icon: "",
         placeholder: ""
     }
-    
+
     static get observedAttributes() {
         const properties: Record<SignUpInputProperties, null> = {
             icon: null,
             placeholder: null
         }
-        return Object.keys(properties); 
+        return Object.keys(properties);
     }
-    
+
     constructor() {
         super()
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
     attributeChangedCallback(propName: SignUpInputProperties, oldValue: string, newValue: string) {
@@ -59,6 +60,53 @@ export class SignUpInput extends HTMLElement {
         input.setAttribute("type", "text")
         input.setAttribute("placeholder", `${this.properties.placeholder}`)
         inputContainer.appendChild(input)
+
+        switch (this.properties.placeholder) {
+            case "Name":
+                console.log("Name")
+                input.addEventListener("change", () => {
+                    registerData.name = input.value
+                    console.log(registerData)
+                })
+                break;
+            case "Last name":
+                console.log("Last name")
+                input.addEventListener("change", () => {
+                    registerData.lastName = input.value
+                    console.log(registerData)
+                })
+                break;
+            case "Email":
+                console.log("Email")
+                input.addEventListener("change", () => {
+                    registerData.email = input.value
+                    console.log(registerData)
+                })
+                break;
+            case "Cellphone":
+                console.log("Cellphone")
+                input.addEventListener("change", () => {
+                    registerData.cellphone = input.value
+                    console.log(registerData)
+                })
+                break;
+            case "Password":
+                console.log("Password")
+                input.addEventListener("change", () => {
+                    registerData.password = input.value
+                    console.log(registerData)
+                })
+                break;
+            case "Confirm Password":
+                console.log("Confirm Password")
+                input.addEventListener("change", () => {
+                    registerData.confirmPassword = input.value
+                    console.log(registerData)
+                })
+                break;
+            default:
+                break;
+        }
     }
 }
 
