@@ -5,10 +5,10 @@ import { reducer } from "./reducer";
 const observers: Observer[] = [];
 
 export let state: AppState = {
-    screen: Screens.myProductsPage,
+    screen: Screens.landingPage,
     searchText: "",
     viewProduct: "",
-    sideMenu: true
+    sideMenu: false
 };
 
 export const dispatch = (action: Action) => {
