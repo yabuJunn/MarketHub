@@ -1,4 +1,5 @@
 import "../../components/export";
+import { traerDatosUsers } from "../../firebase/firebase";
 
 export class loginPage extends HTMLElement {
     constructor() {
@@ -10,8 +11,10 @@ export class loginPage extends HTMLElement {
         this.render();
     }
 
-    render() {
+    async render() {
         if (this.shadowRoot) {
+            traerDatosUsers()
+
             const link = this.ownerDocument.createElement("link");
             link.setAttribute("rel", "stylesheet");
             link.setAttribute("href", "/src/pages/loginPage/loginPage.css");
@@ -26,10 +29,6 @@ export class loginPage extends HTMLElement {
 
             mainContainer.appendChild(navBarEmpty);
             mainContainer.appendChild(loginregister);
-
-
-
-
            }
         }
     }

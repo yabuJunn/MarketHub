@@ -63,45 +63,33 @@ export class SignUpInput extends HTMLElement {
 
         switch (this.properties.placeholder) {
             case "Name":
-                console.log("Name")
                 input.addEventListener("change", () => {
                     registerData.name = input.value
-                    console.log(registerData)
                 })
                 break;
             case "Last name":
-                console.log("Last name")
                 input.addEventListener("change", () => {
                     registerData.lastName = input.value
-                    console.log(registerData)
                 })
                 break;
             case "Email":
-                console.log("Email")
                 input.addEventListener("change", () => {
                     registerData.email = input.value
-                    console.log(registerData)
                 })
                 break;
             case "Cellphone":
-                console.log("Cellphone")
                 input.addEventListener("change", () => {
                     registerData.cellphone = input.value
-                    console.log(registerData)
                 })
                 break;
             case "Password":
-                console.log("Password")
                 input.addEventListener("change", () => {
                     registerData.password = input.value
-                    console.log(registerData)
                 })
                 break;
             case "Confirm Password":
-                console.log("Confirm Password")
                 input.addEventListener("change", () => {
                     registerData.confirmPassword = input.value
-                    console.log(registerData)
                 })
                 break;
             default:
