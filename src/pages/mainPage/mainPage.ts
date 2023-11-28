@@ -1,4 +1,8 @@
 import "../../components/export"
+import { traerDatosUsuarioRegistrado } from "../../firebase/firebase"
+import { dispatch, state } from "../../store"
+import { changeScreen } from "../../store/actions"
+import { Screens } from "../../types/screens"
 
 export class MainPage extends HTMLElement {
     constructor() {
@@ -10,8 +14,17 @@ export class MainPage extends HTMLElement {
         this.render()
     }
 
-    render() {
+    async render() {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
+            if (state.logedUserID === "") {
+                alert("No hay usuario registrado")
+                dispatch(
+                    changeScreen(Screens.landingPage)
+                )
+            }
+
+            await traerDatosUsuarioRegistrado(state.logedUserID)
+
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
             link.setAttribute("href", "/src/pages/mainPage/mainPage.css")

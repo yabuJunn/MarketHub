@@ -1,6 +1,6 @@
 import { firebaseConfig } from "./firebaseConfig";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, updateDoc, getDocs } from "firebase/firestore";
+import { getFirestore, collection, addDoc, updateDoc, getDocs, doc, getDoc } from "firebase/firestore";
 import { dataUsers } from "../utilities/getDataUsers";
 
 const app = initializeApp(firebaseConfig);
@@ -26,4 +26,16 @@ export const traerDatosUsers = async () => {
     dataUsers.push(doc.data())
   });
   console.log(dataUsers)
+}
+
+export const traerDatosUsuarioRegistrado = async (userID: string) => {
+  console.log(`Requesting data from user ${userID}`)
+  const docRef = doc(db, "users", userID);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+  } else {
+    console.log("No such document!");
+  }
 }
