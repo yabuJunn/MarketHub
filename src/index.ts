@@ -18,6 +18,9 @@ class AppContainer extends HTMLElement {
             this.shadowRoot.innerHTML = ""
             document.body.classList.remove(...document.body.classList)
 
+            const sideMenu = this.ownerDocument.createElement("side-menu")
+            this.shadowRoot.appendChild(sideMenu)
+
             switch (state.screen) {
                 case Screens.landingPage:
                     const landingPage = this.ownerDocument.createElement("landing-page")

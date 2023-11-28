@@ -7,7 +7,8 @@ const observers: Observer[] = [];
 export let state: AppState = {
     screen: Screens.myProductsPage,
     searchText: "",
-    viewProduct: ""
+    viewProduct: "",
+    sideMenu: true
 };
 
 export const dispatch = (action: Action) => {

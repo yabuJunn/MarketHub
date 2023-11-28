@@ -1,5 +1,5 @@
 import { dispatch } from "../../../store";
-import { changeScreen, changeSeaarchText } from "../../../store/actions";
+import { changeScreen, changeSeaarchText, sideMenuVisibility } from "../../../store/actions";
 import { Screens } from "../../../types/screens";
 import "../../export";
 
@@ -11,7 +11,7 @@ export class NavBarRed extends HTMLElement {
 
     connectedCallback() {
         this.mount();
-        
+
     }
 
     mount() {
@@ -91,6 +91,12 @@ export class NavBarRed extends HTMLElement {
             cartButton.addEventListener("click", () => {
                 dispatch(
                     changeScreen(Screens.shoopingList)
+                )
+            })
+
+            menuButton.addEventListener("click", () => {
+                dispatch(
+                    sideMenuVisibility(true)
                 )
             })
         }

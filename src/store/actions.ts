@@ -14,3 +14,8 @@ export const changeViewProduct = (payload: string): Action => ({
   type: Actions.CHANGE_VIEW_PRODUCT,
   payload,
 });
+
+export const sideMenuVisibility = (payload: Boolean): Action => ({
+  type: Actions.SIDE_MENU_VISIBILITY,
+  payload,
+});

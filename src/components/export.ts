@@ -29,6 +29,9 @@ export { NavBarEmpty } from './navBar/navBarEmpty/navBarEmpty'
 export { NavBarRed } from './navBar/navBarRed/navBarRed'
 export { NavBarWhite } from './navBar/navBarWhite/navBarWhite'
 
+//Side Menu
+export { sideMenu } from './sideMenu/sideMenu'
+
 //SignUp
 export { SignUp } from '../pages/signUp/signUp'
 export { SignUpMenu } from './signUp/signUpMenu/signUpMenu'
