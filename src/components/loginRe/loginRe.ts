@@ -1,6 +1,8 @@
 import { dispatch } from "../../store";
 import { changeScreen } from "../../store/actions";
 import { Screens } from "../../types/screens";
+import { dataUsers } from "../../utilities/getDataUsers";
+import { loginData } from "../../utilities/loginData";
 import "../export";
 
 export class loginregister extends HTMLElement {
@@ -65,9 +67,23 @@ export class loginregister extends HTMLElement {
             mainContainer.appendChild(signUpLink);
 
             loginButton.addEventListener("click", () => {
-                dispatch(
-                    changeScreen(Screens.mainPage)
-                )
+                console.log("User button")
+                dataUsers.forEach((user) => {
+                    console.log(`Usuario: ${user.name}`)
+                    if (loginData.email === user.email) {
+                        console.log(`Encontro usuario: ${user.email}`)
+                        if (loginData.password === user.password) {
+                            console.log("La contraseña es correcta")
+                        } else {
+                            console.log("La contraseña es incorrecta")
+                        }
+                        return
+                    }
+                })
+                
+                // dispatch(
+                //     changeScreen(Screens.mainPage)
+                // )
             })
         }
     }
