@@ -2,7 +2,7 @@ import { dispatch } from "../../store";
 import { changeLogedUser, changeScreen } from "../../store/actions";
 import { Screens } from "../../types/screens";
 import { dataUsers } from "../../utilities/getDataUsers";
-import { loginData } from "../../utilities/loginData";
+import { loginData, reiniciarloginData } from "../../utilities/loginData";
 import "../export";
 
 export class loginregister extends HTMLElement {
@@ -70,8 +70,9 @@ export class loginregister extends HTMLElement {
                 dataUsers.forEach((user) => {
                     if (loginData.email === user.email) {
                         if (loginData.password === user.password) {
+                            reiniciarloginData()
                             dispatch(
-                                    changeLogedUser(user.id)
+                                changeLogedUser(user.id)
                             )
                             dispatch(
                                 changeScreen(Screens.mainPage)
@@ -81,7 +82,6 @@ export class loginregister extends HTMLElement {
                         }
                     }
                 })
-                alert("Usuario no registrado")
             })
         }
     }
