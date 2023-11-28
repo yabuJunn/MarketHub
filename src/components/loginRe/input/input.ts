@@ -10,18 +10,18 @@ export class CustomInput extends HTMLElement {
         icon: "",
         placeholder: ""
     }
-    
+
     static get observedAttributes() {
         const properties: Record<CustomInputProperties, null> = {
             icon: null,
             placeholder: null
         }
-        return Object.keys(properties); 
+        return Object.keys(properties);
     }
-    
+
     constructor() {
         super()
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
     attributeChangedCallback(propName: CustomInputProperties, oldValue: string, newValue: string) {
@@ -58,7 +58,7 @@ export class CustomInput extends HTMLElement {
         const input = this.ownerDocument.createElement("input")
         input.setAttribute("type", "text")
         input.setAttribute("placeholder", `${this.properties.placeholder}`)
-        inputContainer.appendChild(input)
+        inputContainer.appendChild(input)   
     }
 }
 

@@ -38,12 +38,12 @@ export class loginregister extends HTMLElement {
             centralBox.appendChild(subTitle);
 
             const emailInput = this.ownerDocument.createElement('signup-input');
-            emailInput.setAttribute('placeholder', 'Email');
+            emailInput.setAttribute('placeholder', 'Enter your email');
             emailInput.setAttribute('icon', '/src/resources/svg/Icons/Email.svg');
             centralBox.appendChild(emailInput);
 
             const passwordInput = this.ownerDocument.createElement('signup-input');
-            passwordInput.setAttribute('placeholder', 'Password');
+            passwordInput.setAttribute('placeholder', 'Enter your password');
             passwordInput.setAttribute('icon', '/src/resources/svg/Icons/Lock.svg');
             centralBox.appendChild(passwordInput);
 

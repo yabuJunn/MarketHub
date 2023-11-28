@@ -1,3 +1,4 @@
+import { loginData } from "../../../utilities/loginData";
 import { registerData } from "../../../utilities/registerData";
 import "../../export";
 
@@ -90,6 +91,18 @@ export class SignUpInput extends HTMLElement {
             case "Confirm Password":
                 input.addEventListener("change", () => {
                     registerData.confirmPassword = input.value
+                })
+                break;
+            case "Enter your email":
+                input.addEventListener("change", () => {
+                    loginData.email = input.value
+                    console.log(loginData)
+                })
+                break;
+            case "Enter your password":
+                input.addEventListener("change", () => {
+                    loginData.password = input.value
+                    console.log(loginData)
                 })
                 break;
             default:
