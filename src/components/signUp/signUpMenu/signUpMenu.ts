@@ -1,6 +1,8 @@
+import { registrarUsuario } from "../../../firebase/firebase"
 import { dispatch } from "../../../store"
 import { changeScreen } from "../../../store/actions"
 import { Screens } from "../../../types/screens"
+import { registerData } from "../../../utilities/registerData"
 import "../../export"
 
 export class SignUpMenu extends HTMLElement {
@@ -66,7 +68,9 @@ export class SignUpMenu extends HTMLElement {
             createAccountButton.innerHTML = "CREATE ACCOUNT"
             menuContainer.appendChild(createAccountButton)
 
-            createAccountButton.addEventListener("click", () => {
+            createAccountButton.addEventListener("click", async () => {
+                const userID = await registrarUsuario(`${registerData.name} ${registerData.lastName}`, registerData.email, registerData.cellphone, registerData.password)
+                console.log(`El ID del usuario es: ${userID}`)
                 dispatch(
                     changeScreen(Screens.mainPage)
                 )

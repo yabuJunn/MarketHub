@@ -12,8 +12,9 @@ export const registrarUsuario = async (nameParam: string, emailParam: string, ce
         cellphone: cellphoneParam,
         password: passwordParam
       });
-      console.log("Document written with ID: ", docRef.id);
+      //console.log("Document written with ID: ", docRef.id);
       await updateDoc(docRef, {
         id: docRef.id
       });
+      return docRef.id
 }
