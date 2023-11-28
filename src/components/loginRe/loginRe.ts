@@ -73,14 +73,15 @@ export class loginregister extends HTMLElement {
                             dispatch(
                                     changeLogedUser(user.id)
                             )
-                            // dispatch(
-                            //     changeScreen(Screens.mainPage)
-                            // )
+                            dispatch(
+                                changeScreen(Screens.mainPage)
+                            )
                         } else {
                             alert("Contraseña Incorrecta")
                         }
                     }
                 })
+                alert("Usuario no registrado")
             })
         }
     }
