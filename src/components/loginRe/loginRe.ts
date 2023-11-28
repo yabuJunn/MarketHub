@@ -1,6 +1,8 @@
 import { dispatch } from "../../store";
-import { changeScreen } from "../../store/actions";
+import { changeLogedUser, changeScreen } from "../../store/actions";
 import { Screens } from "../../types/screens";
+import { dataUsers } from "../../utilities/getDataUsers";
+import { loginData, reiniciarloginData } from "../../utilities/loginData";
 import "../export";
 
 export class loginregister extends HTMLElement {
@@ -38,12 +40,12 @@ export class loginregister extends HTMLElement {
             centralBox.appendChild(subTitle);
 
             const emailInput = this.ownerDocument.createElement('signup-input');
-            emailInput.setAttribute('placeholder', 'Email');
+            emailInput.setAttribute('placeholder', 'Enter your email');
             emailInput.setAttribute('icon', '/src/resources/svg/Icons/Email.svg');
             centralBox.appendChild(emailInput);
 
             const passwordInput = this.ownerDocument.createElement('signup-input');
-            passwordInput.setAttribute('placeholder', 'Password');
+            passwordInput.setAttribute('placeholder', 'Enter your password');
             passwordInput.setAttribute('icon', '/src/resources/svg/Icons/Lock.svg');
             centralBox.appendChild(passwordInput);
 
@@ -65,9 +67,21 @@ export class loginregister extends HTMLElement {
             mainContainer.appendChild(signUpLink);
 
             loginButton.addEventListener("click", () => {
-                dispatch(
-                    changeScreen(Screens.mainPage)
-                )
+                dataUsers.forEach((user) => {
+                    if (loginData.email === user.email) {
+                        if (loginData.password === user.password) {
+                            reiniciarloginData()
+                            dispatch(
+                                changeLogedUser(user.id)
+                            )
+                            dispatch(
+                                changeScreen(Screens.mainPage)
+                            )
+                        } else {
+                            alert("Contraseña Incorrecta")
+                        }
+                    }
+                })
             })
         }
     }
