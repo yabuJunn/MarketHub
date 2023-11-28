@@ -22,6 +22,11 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
         ...currentState,
         sideMenu: action.payload
       };
+    case Actions.CHANGE_LOGED_USER:
+      return {
+        ...currentState,
+        logedUserID: action.payload
+      };
     default:
       return currentState;
   }

@@ -8,7 +8,8 @@ export let state: AppState = {
     screen: Screens.landingPage,
     searchText: "",
     viewProduct: "",
-    sideMenu: false
+    sideMenu: false,
+    logedUserID: ""
 };
 
 export const dispatch = (action: Action) => {

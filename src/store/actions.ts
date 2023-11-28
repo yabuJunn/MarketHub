@@ -19,3 +19,8 @@ export const sideMenuVisibility = (payload: Boolean): Action => ({
   type: Actions.SIDE_MENU_VISIBILITY,
   payload,
 });
+
+export const changeLogedUser = (payload: string): Action => ({
+  type: Actions.CHANGE_LOGED_USER,
+  payload,
+});
