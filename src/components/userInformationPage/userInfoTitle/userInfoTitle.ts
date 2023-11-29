@@ -1,3 +1,4 @@
+import { state } from "../../../store"
 import "../../export"
 
 export class userInfoTitle extends HTMLElement {
@@ -23,7 +24,7 @@ export class userInfoTitle extends HTMLElement {
 
             const userImage = this.ownerDocument.createElement("div")
             userImage.setAttribute("id", "userImage")
-            userImage.style.backgroundImage = `url(https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D)`
+            userImage.style.backgroundImage = `url(/src/resources/svg/navIcons/light/userLight.svg)`
             mainContainer.appendChild(userImage)
 
             const userTitleInfo = this.ownerDocument.createElement("div")
@@ -31,11 +32,11 @@ export class userInfoTitle extends HTMLElement {
             mainContainer.appendChild(userTitleInfo)
 
             const userName = this.ownerDocument.createElement("h1")
-            userName.innerText = "UserName"
+            userName.innerText = `${state.logedUserData.name}`
             userTitleInfo.appendChild(userName)
 
             const userUsername = this.ownerDocument.createElement("h2")
-            userUsername.innerText = "@UserName"
+            userUsername.innerText = `@${state.logedUserData.name}`
             userTitleInfo.appendChild(userUsername)
         }
     }

@@ -1,3 +1,4 @@
+import { state } from "../../../store"
 import "../../export"
 
 export class userInfoRest extends HTMLElement {
@@ -27,11 +28,11 @@ export class userInfoRest extends HTMLElement {
             mainContainer.appendChild(emailContainer)
 
             const emailTitle = this.ownerDocument.createElement("h2")
-            emailTitle.innerText = "Email"
+            emailTitle.innerText = `${state.logedUserData.email}`
             emailContainer.appendChild(emailTitle)
 
             const emailValue = this.ownerDocument.createElement("h3")
-            emailValue.innerText = "userEmail"
+            emailValue.innerText = `${state.logedUserData.email}`
             emailContainer.appendChild(emailValue)
 
             //Line Email
@@ -49,7 +50,7 @@ export class userInfoRest extends HTMLElement {
             phoneContainer.appendChild(phoneTitle)
 
             const phoneValue = this.ownerDocument.createElement("h3")
-            phoneValue.innerText = "userPhone"
+            phoneValue.innerText = `${state.logedUserData.cellphone}`
             phoneContainer.appendChild(phoneValue)
 
             //Line Phone
@@ -67,7 +68,7 @@ export class userInfoRest extends HTMLElement {
             idContainer.appendChild(idTitle)
 
             const idValue = this.ownerDocument.createElement("h3")
-            idValue.innerText = "idPhone"
+            idValue.innerText = `${state.logedUserData.id}`
             idContainer.appendChild(idValue)
         }
     }
