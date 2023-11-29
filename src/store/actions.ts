@@ -1,4 +1,4 @@
-import { Action, Actions } from "../types/store";
+import { Action, Actions, logedUserDataType } from "../types/store";
 
 export const changeScreen = (payload: string): Action => ({
   type: Actions.CHANGE_SCREEN,
@@ -20,7 +20,12 @@ export const sideMenuVisibility = (payload: Boolean): Action => ({
   payload,
 });
 
-export const changeLogedUser = (payload: string): Action => ({
-  type: Actions.CHANGE_LOGED_USER,
+export const changeLogedUserID = (payload: string): Action => ({
+  type: Actions.CHANGE_LOGED_USER_ID,
+  payload,
+});
+
+export const changeLogedUserData = (payload: logedUserDataType | any): Action => ({
+  type: Actions.CHANGE_LOGED_USER_DATA,
   payload,
 });

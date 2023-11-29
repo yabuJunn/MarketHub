@@ -9,7 +9,14 @@ export let state: AppState = {
     searchText: "",
     viewProduct: "",
     sideMenu: false,
-    logedUserID: ""
+    logedUserID: "",
+    logedUserData: {
+        name: null,
+        email: null,
+        password: null,
+        cellphone: null,
+        id: null
+    }
 };
 
 export const dispatch = (action: Action) => {

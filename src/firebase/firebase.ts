@@ -2,6 +2,8 @@ import { firebaseConfig } from "./firebaseConfig";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, updateDoc, getDocs, doc, getDoc } from "firebase/firestore";
 import { dataUsers } from "../utilities/getDataUsers";
+import { dispatch, state } from "../store";
+import { changeLogedUserData } from "../store/actions";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -34,7 +36,9 @@ export const traerDatosUsuarioRegistrado = async (userID: string) => {
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    console.log("Document data:", docSnap.data());
+    dispatch(
+      changeLogedUserData(docSnap.data())
+    )
   } else {
     console.log("No such document!");
   }

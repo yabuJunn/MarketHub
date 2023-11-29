@@ -10,21 +10,23 @@ export class MainPage extends HTMLElement {
         this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+        if (state.logedUserID === "") {
+            alert("No hay usuario registrado")
+            dispatch(
+                changeScreen(Screens.landingPage)
+            )
+        }
+
+        if (state.logedUserData.id === null) {
+            console.log("Vamos a traer los datos del usuario registrado")
+            await traerDatosUsuarioRegistrado(state.logedUserID)
+        }
         this.render()
     }
 
     async render() {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
-            if (state.logedUserID === "") {
-                alert("No hay usuario registrado")
-                dispatch(
-                    changeScreen(Screens.landingPage)
-                )
-            }
-
-            await traerDatosUsuarioRegistrado(state.logedUserID)
-
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
             link.setAttribute("href", "/src/pages/mainPage/mainPage.css")

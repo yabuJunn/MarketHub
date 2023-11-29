@@ -1,5 +1,5 @@
 import { dispatch } from "../../store";
-import { changeLogedUser, changeScreen } from "../../store/actions";
+import { changeLogedUserID, changeScreen } from "../../store/actions";
 import { Screens } from "../../types/screens";
 import { dataUsers } from "../../utilities/getDataUsers";
 import { loginData, reiniciarloginData } from "../../utilities/loginData";
@@ -72,7 +72,7 @@ export class loginregister extends HTMLElement {
                         if (loginData.password === user.password) {
                             reiniciarloginData()
                             dispatch(
-                                changeLogedUser(user.id)
+                                changeLogedUserID(user.id)
                             )
                             dispatch(
                                 changeScreen(Screens.mainPage)

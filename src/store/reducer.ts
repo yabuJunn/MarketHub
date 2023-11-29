@@ -22,10 +22,21 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
         ...currentState,
         sideMenu: action.payload
       };
-    case Actions.CHANGE_LOGED_USER:
+    case Actions.CHANGE_LOGED_USER_ID:
       return {
         ...currentState,
         logedUserID: action.payload
+      };
+    case Actions.CHANGE_LOGED_USER_DATA:
+      return {
+        ...currentState,
+        logedUserData: {
+          name: action.payload.name,
+          email: action.payload.email,
+          password: action.payload.password,
+          cellphone: action.payload.cellphone,
+          id: action.payload.id
+        }
       };
     default:
       return currentState;
