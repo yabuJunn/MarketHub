@@ -85,3 +85,8 @@ export { myProductsPage } from '../pages/myProductsPage/myProductsPage' //my_pro
 export { myProductsTotalProducts } from './myProductsPage/myProductsTotalProducts/myProductsTotalProducts' //my_products-total_products
 export { myProductsSearch } from './myProductsPage/myProductsSearch/myProductsSearch' //my_products-search
 export { myProductCard } from './myProductsPage/myProductCard/myProductCard' //my_product-card
+
+//Change Data Page
+export { changeDataPage } from '../pages/changeDataPage/changeDataPage' //change_data-page
+export { changeDataTitle } from './changeDataPage/changeDataTitle/changeDataTitle' //change_data-title
+export { changeDataRest } from './changeDataPage/changeDataRest/changeDataRest' //change_data-rest

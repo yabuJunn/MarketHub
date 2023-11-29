@@ -1,4 +1,7 @@
 import "../../components/export"
+import { dispatch } from "../../store"
+import { changeScreen } from "../../store/actions"
+import { Screens } from "../../types/screens"
 
 export class userInformationPage extends HTMLElement {
     constructor() {
@@ -43,7 +46,13 @@ export class userInformationPage extends HTMLElement {
             buttonLogOut.setAttribute("id", "buttonLogOut")
             buttonLogOut.innerText = "LOG OUT"
             buttonsContainer.appendChild(buttonLogOut)
-        }  
+
+            buttonChangeData.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.changeDataPage)
+                )
+            })
+        }
     }
 }
 
