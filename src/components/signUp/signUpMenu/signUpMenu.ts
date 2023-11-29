@@ -1,8 +1,8 @@
 import { registrarUsuario } from "../../../firebase/firebase"
 import { dispatch } from "../../../store"
-import { changeLogedUser, changeScreen } from "../../../store/actions"
+import { changeScreen } from "../../../store/actions"
 import { Screens } from "../../../types/screens"
-import { registerData } from "../../../utilities/registerData"
+import { registerData, reiniciarRegisterData } from "../../../utilities/registerData"
 import "../../export"
 
 export class SignUpMenu extends HTMLElement {
@@ -41,7 +41,7 @@ export class SignUpMenu extends HTMLElement {
 
             const lastName = this.ownerDocument.createElement("signup-input")
             lastName.setAttribute("icon", "/src/resources/svg/Icons/User.svg")
-            lastName.setAttribute("placeholder", "Last name")
+            lastName.setAttribute("placeholder", "User ID")
             menuContainer.appendChild(lastName)
 
             const email = this.ownerDocument.createElement("signup-input")
@@ -53,6 +53,11 @@ export class SignUpMenu extends HTMLElement {
             cellphone.setAttribute("icon", "/src/resources/svg/Icons/Cellphone.svg")
             cellphone.setAttribute("placeholder", "Cellphone")
             menuContainer.appendChild(cellphone)
+
+            const identification = this.ownerDocument.createElement("signup-input")
+            identification.setAttribute("icon", "/src/resources/svg/Icons/Identification Document.svg")
+            identification.setAttribute("placeholder", "Identification document")
+            menuContainer.appendChild(identification)
 
             const password = this.ownerDocument.createElement("signup-input")
             password.setAttribute("icon", "/src/resources/svg/Icons/Lock.svg")
@@ -69,16 +74,13 @@ export class SignUpMenu extends HTMLElement {
             menuContainer.appendChild(createAccountButton)
 
             createAccountButton.addEventListener("click", async () => {
-                const userID = await registrarUsuario(`${registerData.name} ${registerData.lastName}`, registerData.email, registerData.cellphone, registerData.password)
-                console.log(`El ID del usuario es: ${userID}`)
-                dispatch(
-                    changeLogedUser(userID)
-                )
+                const userID = await registrarUsuario(registerData.name, registerData.email, registerData.cellphone, registerData.password, registerData.identificationDocument, registerData.userID)
+                reiniciarRegisterData()
+                localStorage.setItem("logedFirebaseID", userID)
                 dispatch(
                     changeScreen(Screens.mainPage)
                 )
             })
-
         }
     }
 }

@@ -1,4 +1,8 @@
 import "../../components/export"
+import { traerDatosUsuarioRegistrado } from "../../firebase/firebase"
+import { dispatch, state } from "../../store"
+import { changeScreen } from "../../store/actions"
+import { Screens } from "../../types/screens"
 
 export class MainPage extends HTMLElement {
     constructor() {
@@ -6,11 +10,21 @@ export class MainPage extends HTMLElement {
         this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+        if (localStorage.getItem("logedFirebaseID") === null) {
+            alert("No hay usuario registrado")
+            dispatch(
+                changeScreen(Screens.landingPage)
+            )
+        }
+
+        if (state.logedUserData.firebaseID === null) {
+            await traerDatosUsuarioRegistrado(`${localStorage.getItem("logedFirebaseID")}`)
+        }
         this.render()
     }
 
-    render() {
+    async render() {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")

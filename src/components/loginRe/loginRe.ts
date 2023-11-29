@@ -1,7 +1,7 @@
 import { dispatch } from "../../store";
-import { changeLogedUser, changeScreen } from "../../store/actions";
+import { changeScreen } from "../../store/actions";
 import { Screens } from "../../types/screens";
-import { dataUsers } from "../../utilities/getDataUsers";
+import { dataUsers, reiniciarDataUsers } from "../../utilities/getDataUsers";
 import { loginData, reiniciarloginData } from "../../utilities/loginData";
 import "../export";
 
@@ -67,13 +67,14 @@ export class loginregister extends HTMLElement {
             mainContainer.appendChild(signUpLink);
 
             loginButton.addEventListener("click", () => {
+                console.log("click")
                 dataUsers.forEach((user) => {
+                    console.log(user)
                     if (loginData.email === user.email) {
                         if (loginData.password === user.password) {
+                            localStorage.setItem("logedFirebaseID", user.firebaseID)
                             reiniciarloginData()
-                            dispatch(
-                                changeLogedUser(user.id)
-                            )
+                            reiniciarDataUsers()
                             dispatch(
                                 changeScreen(Screens.mainPage)
                             )

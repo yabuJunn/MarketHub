@@ -1,3 +1,4 @@
+import { Screens } from "../types/screens";
 import { Action, Actions, AppState } from "../types/store";
 
 export const reducer = (action: Action, currentState: AppState): AppState => {
@@ -22,10 +23,34 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
         ...currentState,
         sideMenu: action.payload
       };
-    case Actions.CHANGE_LOGED_USER:
+    case Actions.CHANGE_LOGED_USER_DATA:
       return {
         ...currentState,
-        logedUserID: action.payload
+        logedUserData: {
+          name: action.payload.name,
+          email: action.payload.email,
+          password: action.payload.password,
+          cellphone: action.payload.cellphone,
+          userID: action.payload.userID,
+          firebaseID: action.payload.firebaseID,
+          identificationDocument: action.payload.identificationDocument
+        }
+      };
+    case Actions.RESTART_GLOBAL_STORE:
+      return {
+        screen: Screens.landingPage,
+        searchText: "",
+        viewProduct: "",
+        sideMenu: false,
+        logedUserData: {
+          name: null,
+          email: null,
+          password: null,
+          cellphone: null,
+          userID: null,
+          firebaseID: null,
+          identificationDocument: null
+        }
       };
     default:
       return currentState;

@@ -1,5 +1,6 @@
 import "../../components/export";
 import { traerDatosUsers } from "../../firebase/firebase";
+import { state } from "../../store";
 
 export class loginPage extends HTMLElement {
     constructor() {
@@ -29,8 +30,8 @@ export class loginPage extends HTMLElement {
 
             mainContainer.appendChild(navBarEmpty);
             mainContainer.appendChild(loginregister);
-           }
         }
     }
+}
 
 customElements.define("login-page", loginPage);

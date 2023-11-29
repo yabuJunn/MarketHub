@@ -9,7 +9,15 @@ export let state: AppState = {
     searchText: "",
     viewProduct: "",
     sideMenu: false,
-    logedUserID: ""
+    logedUserData: {
+        name: null,
+        email: null,
+        password: null,
+        cellphone: null,
+        userID: null,
+        identificationDocument: null,
+        firebaseID: null
+    }
 };
 
 export const dispatch = (action: Action) => {
