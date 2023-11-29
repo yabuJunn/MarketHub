@@ -1,4 +1,5 @@
 import { state } from "../../../store"
+import { changeDataInfo } from "../../../utilities/changeDataInfo"
 import "../../export"
 
 export class changeDataRest extends HTMLElement {
@@ -70,6 +71,22 @@ export class changeDataRest extends HTMLElement {
             const idValue = this.ownerDocument.createElement("input")
             idValue.value = `${state.logedUserData.identificationDocument}`
             idContainer.appendChild(idValue)
+
+            changeDataInfo.email = `${state.logedUserData.email}`
+            changeDataInfo.phone = `${state.logedUserData.cellphone}`
+            changeDataInfo.identificationDocument = `${state.logedUserData.identificationDocument}`
+
+            emailValue.addEventListener("change", () => {
+                changeDataInfo.email = emailValue.value
+            })
+
+            phoneValue.addEventListener("change", () => {
+                changeDataInfo.phone = phoneValue.value
+            })
+
+            idValue.addEventListener("change", () => {
+                changeDataInfo.identificationDocument = idValue.value
+            })
         }
     }
 }
