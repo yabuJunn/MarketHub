@@ -3,12 +3,6 @@ import { changeScreen, changeSeaarchText } from "../../../store/actions"
 import { Screens } from "../../../types/screens"
 import "../../export"
 
-const queryString = window.location.search
-console.log(queryString)
-
-const params = new URLSearchParams(queryString)
-console.log(params.get("search"))
-
 export class NavSearchBarWhite extends HTMLElement {
     constructor() {
         super()
