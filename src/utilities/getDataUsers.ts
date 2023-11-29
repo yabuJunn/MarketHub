@@ -9,5 +9,7 @@ interface user {
     password: string,
     email: string,
     cellphone: string,
-    id: string
+    userID: string,
+    firebaseID: string,
+    identificationDocument: string,
 }

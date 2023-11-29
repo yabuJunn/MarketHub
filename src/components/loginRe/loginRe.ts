@@ -67,10 +67,12 @@ export class loginregister extends HTMLElement {
             mainContainer.appendChild(signUpLink);
 
             loginButton.addEventListener("click", () => {
+                console.log("click")
                 dataUsers.forEach((user) => {
+                    console.log(user)
                     if (loginData.email === user.email) {
                         if (loginData.password === user.password) {
-                            localStorage.setItem("logedID", user.id)
+                            localStorage.setItem("logedFirebaseID", user.firebaseID)
                             reiniciarloginData()
                             reiniciarDataUsers()
                             dispatch(

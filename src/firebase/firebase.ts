@@ -29,6 +29,7 @@ export const traerDatosUsers = async () => {
   const querySnapshot = await getDocs(collection(db, "users"));
   querySnapshot.forEach((doc) => {
     dataUsers.push(doc.data())
+    console.log(dataUsers)
   });
 }
 
