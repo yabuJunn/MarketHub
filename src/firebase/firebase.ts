@@ -8,16 +8,19 @@ import { changeLogedUserData } from "../store/actions";
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export const registrarUsuario = async (nameParam: string, emailParam: string, cellphoneParam: string, passwordParam: string) => {
+export const registrarUsuario = async (nameParam: string, emailParam: string, cellphoneParam: string, passwordParam: string, identificationDocumentParam: string, userIDParam: string) => {
   const docRef = await addDoc(collection(db, "users"), {
     name: nameParam,
     email: emailParam,
     cellphone: cellphoneParam,
-    password: passwordParam
+    password: passwordParam,
+    identificationDocument: identificationDocumentParam,
+    userID: userIDParam
+
   });
   //console.log("Document written with ID: ", docRef.id);
   await updateDoc(docRef, {
-    id: docRef.id
+    firebaseID: docRef.id
   });
   return docRef.id
 }
@@ -29,8 +32,8 @@ export const traerDatosUsers = async () => {
   });
 }
 
-export const traerDatosUsuarioRegistrado = async (userID: string) => {
-  const docRef = doc(db, "users", userID);
+export const traerDatosUsuarioRegistrado = async (firebaseID: string) => {
+  const docRef = doc(db, "users", firebaseID);
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {

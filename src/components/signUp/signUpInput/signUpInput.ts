@@ -68,11 +68,11 @@ export class SignUpInput extends HTMLElement {
                     registerData.name = input.value
                 })
                 break;
-            case "Last name":
+            case "User ID":
                 input.addEventListener("change", () => {
-                    registerData.lastName = input.value
+                    registerData.userID = input.value
                 })
-                break;
+                break; 
             case "Email":
                 input.addEventListener("change", () => {
                     registerData.email = input.value
@@ -81,6 +81,12 @@ export class SignUpInput extends HTMLElement {
             case "Cellphone":
                 input.addEventListener("change", () => {
                     registerData.cellphone = input.value
+                })
+                break;
+            case "Identification document":
+                input.addEventListener("change", () => {
+                    registerData.identificationDocument = input.value
+                    console.log(registerData)
                 })
                 break;
             case "Password":
@@ -96,13 +102,11 @@ export class SignUpInput extends HTMLElement {
             case "Enter your email":
                 input.addEventListener("change", () => {
                     loginData.email = input.value
-                    console.log(loginData)
                 })
                 break;
             case "Enter your password":
                 input.addEventListener("change", () => {
                     loginData.password = input.value
-                    console.log(loginData)
                 })
                 break;
             default:

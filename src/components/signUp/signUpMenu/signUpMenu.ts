@@ -41,7 +41,7 @@ export class SignUpMenu extends HTMLElement {
 
             const lastName = this.ownerDocument.createElement("signup-input")
             lastName.setAttribute("icon", "/src/resources/svg/Icons/User.svg")
-            lastName.setAttribute("placeholder", "Last name")
+            lastName.setAttribute("placeholder", "User ID")
             menuContainer.appendChild(lastName)
 
             const email = this.ownerDocument.createElement("signup-input")
@@ -53,6 +53,11 @@ export class SignUpMenu extends HTMLElement {
             cellphone.setAttribute("icon", "/src/resources/svg/Icons/Cellphone.svg")
             cellphone.setAttribute("placeholder", "Cellphone")
             menuContainer.appendChild(cellphone)
+
+            const identification = this.ownerDocument.createElement("signup-input")
+            identification.setAttribute("icon", "/src/resources/svg/Icons/Identification Document.svg")
+            identification.setAttribute("placeholder", "Identification document")
+            menuContainer.appendChild(identification)
 
             const password = this.ownerDocument.createElement("signup-input")
             password.setAttribute("icon", "/src/resources/svg/Icons/Lock.svg")
@@ -69,13 +74,12 @@ export class SignUpMenu extends HTMLElement {
             menuContainer.appendChild(createAccountButton)
 
             createAccountButton.addEventListener("click", async () => {
-                const userID = await registrarUsuario(`${registerData.name} ${registerData.lastName}`, registerData.email, registerData.cellphone, registerData.password)
+                const userID = await registrarUsuario(registerData.name, registerData.email, registerData.cellphone, registerData.password, registerData.identificationDocument, registerData.userID)
                 localStorage.setItem("logedID", userID)
                 dispatch(
                     changeScreen(Screens.mainPage)
                 )
             })
-
         }
     }
 }

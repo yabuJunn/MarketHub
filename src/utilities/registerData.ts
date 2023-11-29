@@ -1,28 +1,31 @@
 export let registerData: registerDataType = {
     name: "",
-    lastName: "",
+    userID: "",
     email: "",
     cellphone: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
+    identificationDocument: ""
 }
 
 export const reiniciarRegisterData = () => {
     registerData = {
         name: "",
-        lastName: "",
+        userID: "",
         email: "",
         cellphone: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+        identificationDocument: ""
     }
 }
 
 interface registerDataType {
     name: string,
-    lastName: string,
+    userID: string,
     email: string,
     cellphone: string,
     password: string,
-    confirmPassword: string
+    confirmPassword: string,
+    identificationDocument: string
 }
