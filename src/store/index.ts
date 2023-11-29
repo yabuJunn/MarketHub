@@ -9,7 +9,6 @@ export let state: AppState = {
     searchText: "",
     viewProduct: "",
     sideMenu: false,
-    logedUserID: "",
     logedUserData: {
         name: null,
         email: null,

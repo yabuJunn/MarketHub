@@ -1,5 +1,5 @@
 import { addObserver, dispatch, state } from "../../store"
-import { changeLogedUserID, changeScreen, restarTGlobalStore, sideMenuVisibility } from "../../store/actions"
+import { changeScreen, restarTGlobalStore, sideMenuVisibility } from "../../store/actions"
 import { Screens } from "../../types/screens"
 
 export class sideMenu extends HTMLElement {

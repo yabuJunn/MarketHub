@@ -23,11 +23,6 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
         ...currentState,
         sideMenu: action.payload
       };
-    case Actions.CHANGE_LOGED_USER_ID:
-      return {
-        ...currentState,
-        logedUserID: action.payload
-      };
     case Actions.CHANGE_LOGED_USER_DATA:
       return {
         ...currentState,
@@ -45,7 +40,6 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
         searchText: "",
         viewProduct: "",
         sideMenu: false,
-        logedUserID: "",
         logedUserData: {
           name: null,
           email: null,

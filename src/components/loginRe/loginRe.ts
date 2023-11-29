@@ -1,5 +1,5 @@
 import { dispatch } from "../../store";
-import { changeLogedUserID, changeScreen } from "../../store/actions";
+import { changeScreen } from "../../store/actions";
 import { Screens } from "../../types/screens";
 import { dataUsers, reiniciarDataUsers } from "../../utilities/getDataUsers";
 import { loginData, reiniciarloginData } from "../../utilities/loginData";
@@ -73,9 +73,6 @@ export class loginregister extends HTMLElement {
                             localStorage.setItem("logedID", user.id)
                             reiniciarloginData()
                             reiniciarDataUsers()
-                            dispatch(
-                                changeLogedUserID(user.id)
-                            )
                             dispatch(
                                 changeScreen(Screens.mainPage)
                             )

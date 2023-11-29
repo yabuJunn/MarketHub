@@ -22,7 +22,6 @@ export interface AppState {
   searchText: string,
   viewProduct: string,
   sideMenu: boolean,
-  logedUserID: string
   logedUserData: logedUserDataType
 }
 
