@@ -1,4 +1,7 @@
 import "../../components/export"
+import { dispatch } from "../../store"
+import { changeScreen } from "../../store/actions"
+import { Screens } from "../../types/screens"
 
 export class LandingPage extends HTMLElement {
     constructor() {
@@ -12,6 +15,13 @@ export class LandingPage extends HTMLElement {
 
     render() {
         if (this.shadowRoot) {
+            if (localStorage.getItem("logedID") !== null) {
+                alert("Hay un usuario registrado")
+                dispatch(
+                    changeScreen(Screens.mainPage)
+                )
+            }
+
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
             link.setAttribute("href", "/src/pages/landingPage/landingPage.css")

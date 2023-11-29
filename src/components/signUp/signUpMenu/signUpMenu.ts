@@ -70,7 +70,7 @@ export class SignUpMenu extends HTMLElement {
 
             createAccountButton.addEventListener("click", async () => {
                 const userID = await registrarUsuario(`${registerData.name} ${registerData.lastName}`, registerData.email, registerData.cellphone, registerData.password)
-                console.log(`El ID del usuario es: ${userID}`)
+                localStorage.setItem("logedID", userID)
                 dispatch(
                     changeLogedUserID(userID)
                 )

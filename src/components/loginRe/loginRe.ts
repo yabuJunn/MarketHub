@@ -1,7 +1,7 @@
 import { dispatch } from "../../store";
 import { changeLogedUserID, changeScreen } from "../../store/actions";
 import { Screens } from "../../types/screens";
-import { dataUsers } from "../../utilities/getDataUsers";
+import { dataUsers, reiniciarDataUsers } from "../../utilities/getDataUsers";
 import { loginData, reiniciarloginData } from "../../utilities/loginData";
 import "../export";
 
@@ -70,7 +70,9 @@ export class loginregister extends HTMLElement {
                 dataUsers.forEach((user) => {
                     if (loginData.email === user.email) {
                         if (loginData.password === user.password) {
+                            localStorage.setItem("logedID", user.id)
                             reiniciarloginData()
+                            reiniciarDataUsers()
                             dispatch(
                                 changeLogedUserID(user.id)
                             )

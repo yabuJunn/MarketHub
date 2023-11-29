@@ -11,7 +11,7 @@ export class MainPage extends HTMLElement {
     }
 
     async connectedCallback() {
-        if (state.logedUserID === "") {
+        if (localStorage.getItem("logedID") === null) {
             alert("No hay usuario registrado")
             dispatch(
                 changeScreen(Screens.landingPage)
@@ -19,8 +19,7 @@ export class MainPage extends HTMLElement {
         }
 
         if (state.logedUserData.id === null) {
-            console.log("Vamos a traer los datos del usuario registrado")
-            await traerDatosUsuarioRegistrado(state.logedUserID)
+            await traerDatosUsuarioRegistrado(`${localStorage.getItem("logedID")}`)
         }
         this.render()
     }

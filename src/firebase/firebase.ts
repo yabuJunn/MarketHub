@@ -27,11 +27,9 @@ export const traerDatosUsers = async () => {
   querySnapshot.forEach((doc) => {
     dataUsers.push(doc.data())
   });
-  console.log(dataUsers)
 }
 
 export const traerDatosUsuarioRegistrado = async (userID: string) => {
-  console.log(`Requesting data from user ${userID}`)
   const docRef = doc(db, "users", userID);
   const docSnap = await getDoc(docRef);
 

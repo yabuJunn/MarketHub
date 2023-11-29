@@ -1,3 +1,4 @@
+import { Screens } from "../types/screens";
 import { Action, Actions, AppState } from "../types/store";
 
 export const reducer = (action: Action, currentState: AppState): AppState => {
@@ -36,6 +37,21 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
           password: action.payload.password,
           cellphone: action.payload.cellphone,
           id: action.payload.id
+        }
+      };
+    case Actions.RESTART_GLOBAL_STORE:
+      return {
+        screen: Screens.landingPage,
+        searchText: "",
+        viewProduct: "",
+        sideMenu: false,
+        logedUserID: "",
+        logedUserData: {
+          name: null,
+          email: null,
+          password: null,
+          cellphone: null,
+          id: null
         }
       };
     default:

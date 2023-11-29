@@ -1,4 +1,4 @@
-import { Action, Actions, logedUserDataType } from "../types/store";
+import { Action, Actions, AppState, logedUserDataType } from "../types/store";
 
 export const changeScreen = (payload: string): Action => ({
   type: Actions.CHANGE_SCREEN,
@@ -28,4 +28,9 @@ export const changeLogedUserID = (payload: string): Action => ({
 export const changeLogedUserData = (payload: logedUserDataType | any): Action => ({
   type: Actions.CHANGE_LOGED_USER_DATA,
   payload,
+});
+
+export const restarTGlobalStore = (): Action => ({
+  type: Actions.RESTART_GLOBAL_STORE,
+  payload: ""
 });
