@@ -15,7 +15,7 @@ export class LandingPage extends HTMLElement {
 
     render() {
         if (this.shadowRoot) {
-            if (localStorage.getItem("logedID") !== null) {
+            if (localStorage.getItem("logedFirebaseID") !== null) {
                 alert("Hay un usuario registrado")
                 dispatch(
                     changeScreen(Screens.mainPage)

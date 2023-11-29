@@ -2,7 +2,7 @@ import { registrarUsuario } from "../../../firebase/firebase"
 import { dispatch } from "../../../store"
 import { changeScreen } from "../../../store/actions"
 import { Screens } from "../../../types/screens"
-import { registerData } from "../../../utilities/registerData"
+import { registerData, reiniciarRegisterData } from "../../../utilities/registerData"
 import "../../export"
 
 export class SignUpMenu extends HTMLElement {
@@ -75,7 +75,8 @@ export class SignUpMenu extends HTMLElement {
 
             createAccountButton.addEventListener("click", async () => {
                 const userID = await registrarUsuario(registerData.name, registerData.email, registerData.cellphone, registerData.password, registerData.identificationDocument, registerData.userID)
-                localStorage.setItem("logedID", userID)
+                reiniciarRegisterData()
+                localStorage.setItem("logedFirebaseID", userID)
                 dispatch(
                     changeScreen(Screens.mainPage)
                 )

@@ -68,7 +68,7 @@ export class userInfoRest extends HTMLElement {
             idContainer.appendChild(idTitle)
 
             const idValue = this.ownerDocument.createElement("h3")
-            idValue.innerText = `${state.logedUserData.id}`
+            idValue.innerText = `${state.logedUserData.identificationDocument}`
             idContainer.appendChild(idValue)
         }
     }

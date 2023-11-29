@@ -14,7 +14,9 @@ export let state: AppState = {
         email: null,
         password: null,
         cellphone: null,
-        id: null
+        userID: null,
+        identificationDocument: null,
+        firebaseID: null
     }
 };
 

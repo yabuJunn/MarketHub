@@ -36,7 +36,7 @@ export class userInfoTitle extends HTMLElement {
             userTitleInfo.appendChild(userName)
 
             const userUsername = this.ownerDocument.createElement("h2")
-            userUsername.innerText = `@${state.logedUserData.name}`
+            userUsername.innerText = `@${state.logedUserData.userID}`
             userTitleInfo.appendChild(userUsername)
         }
     }

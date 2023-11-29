@@ -31,7 +31,9 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
           email: action.payload.email,
           password: action.payload.password,
           cellphone: action.payload.cellphone,
-          id: action.payload.id
+          userID: action.payload.userID,
+          firebaseID: action.payload.firebaseID,
+          identificationDocument: action.payload.identificationDocument
         }
       };
     case Actions.RESTART_GLOBAL_STORE:
@@ -45,7 +47,9 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
           email: null,
           password: null,
           cellphone: null,
-          id: null
+          userID: null,
+          firebaseID: null,
+          identificationDocument: null
         }
       };
     default:

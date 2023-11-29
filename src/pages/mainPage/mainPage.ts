@@ -11,15 +11,15 @@ export class MainPage extends HTMLElement {
     }
 
     async connectedCallback() {
-        if (localStorage.getItem("logedID") === null) {
+        if (localStorage.getItem("logedFirebaseID") === null) {
             alert("No hay usuario registrado")
             dispatch(
                 changeScreen(Screens.landingPage)
             )
         }
 
-        if (state.logedUserData.id === null) {
-            await traerDatosUsuarioRegistrado(`${localStorage.getItem("logedID")}`)
+        if (state.logedUserData.firebaseID === null) {
+            await traerDatosUsuarioRegistrado(`${localStorage.getItem("logedFirebaseID")}`)
         }
         this.render()
     }

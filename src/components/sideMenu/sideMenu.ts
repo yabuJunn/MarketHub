@@ -1,6 +1,7 @@
 import { addObserver, dispatch, state } from "../../store"
-import { changeScreen, restarTGlobalStore, sideMenuVisibility } from "../../store/actions"
+import { changeScreen, sideMenuVisibility } from "../../store/actions"
 import { Screens } from "../../types/screens"
+import { logOut } from "../../utilities/logOutUser"
 
 export class sideMenu extends HTMLElement {
     constructor() {
@@ -62,16 +63,7 @@ export class sideMenu extends HTMLElement {
                 })
 
                 logOutOption.addEventListener("click", () => {
-                    localStorage.removeItem("logedID")
-                    dispatch(
-                        sideMenuVisibility(false)
-                    )
-                    dispatch(
-                        restarTGlobalStore()
-                    )
-                    dispatch(
-                        changeScreen(Screens.landingPage)
-                    )
+                    logOut()
                 })
             }
         }
