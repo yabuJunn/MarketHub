@@ -1,3 +1,7 @@
+import { actualizarDatosDeUsuarioRegistrado } from "../../firebase/firebase"
+import { state } from "../../store"
+import { changeDataInfo } from "../../utilities/changeDataInfo"
+
 export class changeDataPage extends HTMLElement {
     constructor() {
         super()
@@ -35,6 +39,14 @@ export class changeDataPage extends HTMLElement {
             const acceptChangesButton = this.ownerDocument.createElement("button")
             acceptChangesButton.innerText = "ACCEPT CHANGES"
             buttonContainer.appendChild(acceptChangesButton)
+
+            acceptChangesButton.addEventListener("click", () => {
+                if (state.logedUserData.email === changeDataInfo.email && state.logedUserData.cellphone === changeDataInfo.phone && state.logedUserData.identificationDocument === changeDataInfo.identificationDocument) {
+                    alert("No hay cambios que subir")
+                } else {
+                    actualizarDatosDeUsuarioRegistrado(changeDataInfo.email, changeDataInfo.phone, changeDataInfo.identificationDocument, `${state.logedUserData.firebaseID}`)
+                }
+            })
         }
     }
 }
