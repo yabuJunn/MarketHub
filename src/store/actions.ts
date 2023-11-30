@@ -1,3 +1,4 @@
+import { databaseProduct } from "../types/databaseProductsType";
 import { Action, Actions, AppState, logedUserDataType } from "../types/store";
 
 export const changeScreen = (payload: string): Action => ({
@@ -28,4 +29,9 @@ export const changeLogedUserData = (payload: logedUserDataType | any): Action =>
 export const restarTGlobalStore = (): Action => ({
   type: Actions.RESTART_GLOBAL_STORE,
   payload: ""
+});
+
+export const updateDatabaseProducts = (payload: Array<databaseProduct>): Action => ({
+  type: Actions.UPDATE_DATABASE_PRODUCTS,
+  payload: payload
 });

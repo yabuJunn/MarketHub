@@ -1,6 +1,7 @@
 import { state, addObserver } from "./store/index"
 import { Screens } from "./types/screens"
 import "./components/export"
+import "./utilities/generateRandomID"
 
 class AppContainer extends HTMLElement {
     constructor() {
@@ -16,7 +17,7 @@ class AppContainer extends HTMLElement {
     render() {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
             this.shadowRoot.innerHTML = ""
-            document.body.classList.remove(...document.body.classList)
+            document.body.classList.remove("landingPage")
 
             const sideMenu = this.ownerDocument.createElement("side-menu")
             this.shadowRoot.appendChild(sideMenu)
@@ -74,6 +75,9 @@ class AppContainer extends HTMLElement {
                 case Screens.myProductsPage:
                     const myProductsPage = this.ownerDocument.createElement("my_products-page")
                     this.shadowRoot.appendChild(myProductsPage)
+                case Screens.changeDataPage:
+                    const changeDataPage = this.ownerDocument.createElement("change_data-page")
+                    this.shadowRoot.appendChild(changeDataPage)
                 default:
                     break;
             }

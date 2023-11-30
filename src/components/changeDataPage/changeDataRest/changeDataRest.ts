@@ -1,7 +1,8 @@
 import { state } from "../../../store"
+import { changeDataInfo } from "../../../utilities/changeDataInfo"
 import "../../export"
 
-export class userInfoRest extends HTMLElement {
+export class changeDataRest extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: "open" })
@@ -15,11 +16,11 @@ export class userInfoRest extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/userInformationPage/userInfoRest/userInfoRest.css")
+            link.setAttribute("href", "/src/components/changeDataPage/changeDataRest/changeDataRest.css")
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("div")
-            mainContainer.setAttribute("id", "userInfoRest")
+            mainContainer.setAttribute("id", "changeDataRest")
             this.shadowRoot.appendChild(mainContainer)
 
             //Email section
@@ -31,8 +32,8 @@ export class userInfoRest extends HTMLElement {
             emailTitle.innerText = "Email"
             emailContainer.appendChild(emailTitle)
 
-            const emailValue = this.ownerDocument.createElement("h3")
-            emailValue.innerText = `${state.logedUserData.email}`
+            const emailValue = this.ownerDocument.createElement("input")
+            emailValue.value = `${state.logedUserData.email}`
             emailContainer.appendChild(emailValue)
 
             //Line Email
@@ -49,8 +50,8 @@ export class userInfoRest extends HTMLElement {
             phoneTitle.innerText = "Phone"
             phoneContainer.appendChild(phoneTitle)
 
-            const phoneValue = this.ownerDocument.createElement("h3")
-            phoneValue.innerText = `${state.logedUserData.cellphone}`
+            const phoneValue = this.ownerDocument.createElement("input")
+            phoneValue.value = `${state.logedUserData.cellphone}`
             phoneContainer.appendChild(phoneValue)
 
             //Line Phone
@@ -67,11 +68,27 @@ export class userInfoRest extends HTMLElement {
             idTitle.innerText = "Identification Document"
             idContainer.appendChild(idTitle)
 
-            const idValue = this.ownerDocument.createElement("h3")
-            idValue.innerText = `${state.logedUserData.identificationDocument}`
+            const idValue = this.ownerDocument.createElement("input")
+            idValue.value = `${state.logedUserData.identificationDocument}`
             idContainer.appendChild(idValue)
+
+            changeDataInfo.email = `${state.logedUserData.email}`
+            changeDataInfo.phone = `${state.logedUserData.cellphone}`
+            changeDataInfo.identificationDocument = `${state.logedUserData.identificationDocument}`
+
+            emailValue.addEventListener("change", () => {
+                changeDataInfo.email = emailValue.value
+            })
+
+            phoneValue.addEventListener("change", () => {
+                changeDataInfo.phone = phoneValue.value
+            })
+
+            idValue.addEventListener("change", () => {
+                changeDataInfo.identificationDocument = idValue.value
+            })
         }
     }
 }
 
-customElements.define("userinfo-rest", userInfoRest)
+customElements.define("change_data-rest", changeDataRest)
