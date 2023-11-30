@@ -1,6 +1,7 @@
 import { state, addObserver } from "./store/index"
 import { Screens } from "./types/screens"
 import "./components/export"
+import "./utilities/generateRandomID"
 
 class AppContainer extends HTMLElement {
     constructor() {

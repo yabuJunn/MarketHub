@@ -6,6 +6,7 @@ import { dispatch, state } from "../store";
 import { changeLogedUserData, changeScreen } from "../store/actions";
 import { Screens } from "../types/screens";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import { makeid } from "../utilities/generateRandomID";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -68,25 +69,18 @@ export const subirProducto = async (productName: string, productDescription: str
   actualizarUploadedProductsDelUser(productID, userFirebaseID)
 }
 
-const subirImagenProducto = async (file: File) => {
-  const storageRef = await ref(storage, `imagesProducts/${file.name}`);
-  await uploadBytes(storageRef, file).then((snapshot) => {
-    console.log('Uploaded a blob or file!');
-  });
-  return await pedirURL(`imagesProductos/${file.name}`)
-}
-
 const pedirURL = async (path: string) => {
   const url = await getDownloadURL(ref(storage, `${path}`))
   return url
 }
 
 const subirArchivo = async (file: File) => {
-  const storageRef = await ref(storage, `imagesProductos/${file.name}`);
+  const randomID = makeid(15)
+  const storageRef = await ref(storage, `imagesProductos/${randomID}`);
   await uploadBytes(storageRef, file).then((snapshot) => {
     console.log('Uploaded a blob or file!');
   });
-  return await pedirURL(`imagesProductos/${file.name}`)
+  return await pedirURL(`imagesProductos/${randomID}`)
 }
 
 const subirDatosProducto = async (productName: string, productDescription: string, productPrice: string, productImageURL: string | void, userFirebaseID: string) => {

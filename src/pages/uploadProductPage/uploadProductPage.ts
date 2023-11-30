@@ -14,6 +14,7 @@ export class uploadProductPage extends HTMLElement {
 
     render() {
         if (this.shadowRoot) {
+            this.shadowRoot.innerHTML = ""
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
             link.setAttribute("href", "/src/pages/uploadProductPage/uploadProductPage.css")
@@ -109,6 +110,7 @@ export class uploadProductPage extends HTMLElement {
                     alert("Hay campos sin llenar")
                 } else {
                     subirProducto(nameInput.value, descInput.value, priceInput.value, inputImage.files[0], `${state.logedUserData.firebaseID}`)
+                    this.render()
                 }
             })
 
