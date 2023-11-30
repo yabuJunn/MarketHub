@@ -7,4 +7,4 @@ export const reiniciarDatabaseProducts = () => {
     databaseProducts = []
 }
 
-console.log("Estoy con la cuenta de David")
+console.log("Cambie git config user")
