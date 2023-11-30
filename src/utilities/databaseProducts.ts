@@ -6,5 +6,3 @@ export let databaseProducts: Array<databaseProduct | DocumentData> = []
 export const reiniciarDatabaseProducts = () => {
     databaseProducts = []
 }
-
-console.log("Prueba")
