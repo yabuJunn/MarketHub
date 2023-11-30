@@ -18,7 +18,8 @@ export let state: AppState = {
         identificationDocument: null,
         firebaseID: null,
         uploadedProducts: null
-    }
+    },
+    databaseProducts: []
 };
 
 export const dispatch = (action: Action) => {

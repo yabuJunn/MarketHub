@@ -1,3 +1,4 @@
+import { databaseProduct } from "./databaseProductsType";
 import { Screens } from "./screens";
 
 export type Observer = HTMLElement & { render: () => void };
@@ -14,7 +15,8 @@ export enum Actions {
   "SIDE_MENU_VISIBILITY" = "SIDE_MENU_VISIBILITY",
   "CHANGE_LOGED_USER_ID" = "CHANGE_LOGED_USER_ID",
   "CHANGE_LOGED_USER_DATA" = "CHANGE_LOGED_USER_DATA",
-  "RESTART_GLOBAL_STORE" = "RESTART_GLOBAL_STORE"
+  "RESTART_GLOBAL_STORE" = "RESTART_GLOBAL_STORE",
+  "UPDATE_DATABASE_PRODUCTS" = "UPDATE_DATABASE_PRODUCTS"
 }
 
 export interface AppState {
@@ -22,7 +24,8 @@ export interface AppState {
   searchText: string,
   viewProduct: string,
   sideMenu: boolean,
-  logedUserData: logedUserDataType
+  logedUserData: logedUserDataType,
+  databaseProducts: Array<databaseProduct>
 }
 
 export interface logedUserDataType {

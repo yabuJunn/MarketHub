@@ -7,6 +7,7 @@ import { changeLogedUserData, changeScreen } from "../store/actions";
 import { Screens } from "../types/screens";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { makeid } from "../utilities/generateRandomID";
+import { databaseProducts } from "../utilities/databaseProducts";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -116,4 +117,12 @@ const actualizarUploadedProductsDelUser = async (productID: string, userFirebase
     });
     console.log("Actualizado uploadedProducts")
   }
+}
+
+export const traerDatabaseProducts = async () => {
+  const querySnapshot = await getDocs(collection(db, "products"));
+  querySnapshot.forEach((doc) => {
+    databaseProducts.push(doc.data())
+  });
+  console.log(databaseProducts)
 }

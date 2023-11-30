@@ -67,7 +67,6 @@ export class loginregister extends HTMLElement {
             mainContainer.appendChild(signUpLink);
 
             loginButton.addEventListener("click", () => {
-                console.log("click")
                 dataUsers.forEach((user) => {
                     console.log(user)
                     if (loginData.email === user.email) {

@@ -1,8 +1,9 @@
 import "../../components/export"
-import { traerDatosUsuarioRegistrado } from "../../firebase/firebase"
+import { traerDatabaseProducts, traerDatosUsuarioRegistrado } from "../../firebase/firebase"
 import { dispatch, state } from "../../store"
 import { changeScreen } from "../../store/actions"
 import { Screens } from "../../types/screens"
+import { reiniciarDatabaseProducts } from "../../utilities/databaseProducts"
 
 export class MainPage extends HTMLElement {
     constructor() {
@@ -26,6 +27,11 @@ export class MainPage extends HTMLElement {
 
     async render() {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
+            console.log("Render MainPage")
+            //Especificamente primero el traerDatabaseProducts y luego el reiniciarDatabaseProducts para que no se dupliquen los productos
+            await traerDatabaseProducts()
+            reiniciarDatabaseProducts()
+
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
             link.setAttribute("href", "/src/pages/mainPage/mainPage.css")
