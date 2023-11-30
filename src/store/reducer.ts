@@ -33,7 +33,8 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
           cellphone: action.payload.cellphone,
           userID: action.payload.userID,
           firebaseID: action.payload.firebaseID,
-          identificationDocument: action.payload.identificationDocument
+          identificationDocument: action.payload.identificationDocument,
+          uploadedProducts: action.payload.uploadedProducts
         }
       };
     case Actions.RESTART_GLOBAL_STORE:
@@ -49,7 +50,8 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
           cellphone: null,
           userID: null,
           firebaseID: null,
-          identificationDocument: null
+          identificationDocument: null,
+          uploadedProducts: null
         }
       };
     default:

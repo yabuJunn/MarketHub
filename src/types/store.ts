@@ -32,5 +32,6 @@ export interface logedUserDataType {
   cellphone: string | null,
   userID: string | null,
   firebaseID: string | null,
-  identificationDocument: string | null
+  identificationDocument: string | null,
+  uploadedProducts: [] | null
 }
