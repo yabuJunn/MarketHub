@@ -16,7 +16,7 @@ class AppContainer extends HTMLElement {
     render() {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
             this.shadowRoot.innerHTML = ""
-            document.body.classList.remove(...document.body.classList)
+            document.body.classList.remove("landingPage")
 
             const sideMenu = this.ownerDocument.createElement("side-menu")
             this.shadowRoot.appendChild(sideMenu)

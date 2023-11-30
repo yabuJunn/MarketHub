@@ -1,4 +1,6 @@
 import "../../components/export"
+import { subirProducto } from "../../firebase/firebase"
+import { state } from "../../store"
 
 export class uploadProductPage extends HTMLElement {
     constructor() {
@@ -98,7 +100,19 @@ export class uploadProductPage extends HTMLElement {
             uploadButton.innerText = "UPLOAD PRODUCT"
             containerProductInputs.appendChild(uploadButton)
 
-        }  
+            inputImage.addEventListener("change", () => {
+                inputImageMessage.innerText = inputImage.files![0].name
+            })
+
+            uploadButton.addEventListener("click", () => {
+                if (inputImage.value === "" || descInput.value === "" || priceInput.value === "" || inputImage.files === null) {
+                    alert("Hay campos sin llenar")
+                } else {
+                    subirProducto(nameInput.value, descInput.value, priceInput.value, inputImage.files[0], `${state.logedUserData.firebaseID}`)
+                }
+            })
+
+        }
     }
 }
 
