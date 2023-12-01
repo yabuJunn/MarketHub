@@ -1,7 +1,8 @@
 import "../../export";
 import { dataGeneral } from "../../../../data";
 import { state } from "../../../store";
-import { product } from "../../../types/screens";
+import { pedirProductData } from "../../../firebase/firebase";
+import { databaseProduct } from "../../../types/databaseProductsType";
 
 export class ProductDetailCard extends HTMLElement {
     constructor() {
@@ -10,32 +11,16 @@ export class ProductDetailCard extends HTMLElement {
     }
 
     connectedCallback() {
-        this.render();
-
+        pedirProductData(state.viewProduct, this)
     }
 
-    render() {
+    render(dataProducto: databaseProduct) {
         if (this.shadowRoot) {
+            console.log(dataProducto)
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet");
             link.setAttribute("href", "/src/components/productdetailcomp/productdetailcard/productdetailcard.css");
             this.shadowRoot.appendChild(link);
-
-            let productToShow: product = {
-                img: "",
-                price: "",
-                title: "",
-                description: ""
-            }
-
-            dataGeneral.recommended.map((product) => {
-                if (product.title === state.viewProduct) {
-                    productToShow = product
-                }
-            })
-
-            console.log(`Encontro: ${productToShow}`)
-            console.log(productToShow)
 
             const cardContainer = document.createElement("div");
             cardContainer.setAttribute("class", "card-container");
@@ -44,7 +29,7 @@ export class ProductDetailCard extends HTMLElement {
             // Div para la imagen
             const imageContainer = document.createElement("div");
             imageContainer.setAttribute("class", "image-container");
-            imageContainer.style.backgroundImage = `url(${productToShow.img})`
+            imageContainer.style.backgroundImage = `url(${dataProducto.imageURL})`
             cardContainer.appendChild(imageContainer);
 
             // const image = document.createElement("img");
@@ -58,36 +43,36 @@ export class ProductDetailCard extends HTMLElement {
             cardContainer.appendChild(contentContainer);
 
             const title = document.createElement("h1");
-            title.textContent = productToShow.title;
+            title.textContent = dataProducto.name;
             contentContainer.appendChild(title);
 
             const price = document.createElement("h2");
-            price.textContent = productToShow.price;
+            price.textContent = dataProducto.price;
             contentContainer.appendChild(price);
 
-            const ratingContainer = document.createElement("div");
-            ratingContainer.setAttribute("class", "rating-container");
-            contentContainer.appendChild(ratingContainer);
+            // const ratingContainer = document.createElement("div");
+            // ratingContainer.setAttribute("class", "rating-container");
+            // contentContainer.appendChild(ratingContainer);
 
             // Append 5 star images to the rating container
-            for (let i = 0; i < 5; i++) {
-                const star = document.createElement("img");
-                star.setAttribute("src", "/src/resources/svg/Star 1.svg");
-                star.setAttribute("alt", "Star");
-                ratingContainer.appendChild(star);
+            // for (let i = 0; i < 5; i++) {
+            //     const star = document.createElement("img");
+            //     star.setAttribute("src", "/src/resources/svg/Star 1.svg");
+            //     star.setAttribute("alt", "Star");
+            //     ratingContainer.appendChild(star);
 
-            }
+            // }
 
-            const rating = document.createElement("h3");
-            rating.textContent = "4.0";
-            ratingContainer.appendChild(rating);
+            // const rating = document.createElement("h3");
+            // rating.textContent = "4.0";
+            // ratingContainer.appendChild(rating);
 
             const descriptionTitle = document.createElement("h3");
             descriptionTitle.textContent = "Description";
             contentContainer.appendChild(descriptionTitle);
 
             const description = document.createElement("p");
-            description.textContent = productToShow.description;
+            description.textContent = dataProducto.description;
             contentContainer.appendChild(description);
 
             const purchaseButton = document.createElement("button");

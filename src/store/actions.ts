@@ -35,3 +35,8 @@ export const updateDatabaseProducts = (payload: Array<databaseProduct>): Action 
   type: Actions.UPDATE_DATABASE_PRODUCTS,
   payload: payload
 });
+
+export const updateMyProductsSearch = (payload: String): Action => ({
+  type: Actions.UPDATE_MY_PRODUCTS_SEARCH,
+  payload: payload
+});

@@ -1,4 +1,10 @@
+import { DocumentData } from "firebase/firestore"
 import "../../components/export"
+import { traerDatabaseProducts } from "../../firebase/firebase"
+import { state } from "../../store"
+import { databaseProduct } from "../../types/databaseProductsType"
+import { databaseProducts, pedirProducts, reiniciarDatabaseProducts } from "../../utilities/databaseProducts"
+import { Timestamp } from "firebase/firestore"
 
 export class myProductsPage extends HTMLElement {
     constructor() {
@@ -6,12 +12,24 @@ export class myProductsPage extends HTMLElement {
         this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback() {
-        this.render()
+    async connectedCallback() {
+        await traerDatabaseProducts()
+        await this.render()
     }
 
-    render() {
+    async render() {
         if (this.shadowRoot) {
+            const userProductsList: Array<databaseProduct | DocumentData> = []
+            console.log("dataBase ForEach")
+            databaseProducts.forEach((product) => {
+                if (product.userFirebaseID === state.logedUserData.firebaseID) {
+                    console.log("Es mio")
+                    userProductsList.push(product)
+                } else {
+                    console.log("No es mio")
+                }
+            });
+
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
             link.setAttribute("href", "/src/pages/myProductsPage/myProductsPage.css")
@@ -44,14 +62,26 @@ export class myProductsPage extends HTMLElement {
             myProductsCardsContainer.setAttribute("id", "myProductsCardsContainer")
             cardsAndInfoContainer.appendChild(myProductsCardsContainer)
 
-            const pruebaMyProductCard = this.ownerDocument.createElement("my_product-card")
-            myProductsCardsContainer.appendChild(pruebaMyProductCard)
+            userProductsList.forEach((product) => {
+                if (product.name.toLowerCase().includes(state.myProductsSearch.toLowerCase())) {
+                    const myProductCard = this.ownerDocument.createElement("my_product-card")
+                    myProductCard.setAttribute("title", product.name)
+                    myProductCard.setAttribute("desc", product.description)
+                    myProductCard.setAttribute("price", product.price)
+                    const timestamp = new Timestamp(product.uploadDate.seconds, product.uploadDate.nanoseconds)
+                    const timestampDate = timestamp.toDate()
+                    myProductCard.setAttribute("date", `${timestampDate}`)
+                    myProductCard.setAttribute("image", product.imageURL)
+                    myProductsCardsContainer.appendChild(myProductCard)  
+                }
+            })
 
             const moreInfoContainer = this.ownerDocument.createElement("div")
             moreInfoContainer.setAttribute("id", "moreInfoContainer")
             cardsAndInfoContainer.appendChild(moreInfoContainer)
 
             const myProductsTotalProducts = this.ownerDocument.createElement("my_products-total_products")
+            myProductsTotalProducts.setAttribute("total", `${userProductsList.length}`)
             moreInfoContainer.appendChild(myProductsTotalProducts)
 
             const myProductsSearch = this.ownerDocument.createElement("my_products-search")

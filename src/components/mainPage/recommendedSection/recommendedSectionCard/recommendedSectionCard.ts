@@ -7,7 +7,8 @@ const enum recommendedSectionCardProperties {
     img = "img",
     title = "title",
     price = "price",
-    description = "description"
+    description = "description",
+    product_firebase_id = "product_firebase_id"
 
 }
 
@@ -16,7 +17,8 @@ export class recommendedSectionCard extends HTMLElement {
         img: "",
         title: "",
         price: "",
-        description: ""
+        description: "",
+        product_firebase_id: ""
     }
 
     static get observedAttributes() {
@@ -24,7 +26,8 @@ export class recommendedSectionCard extends HTMLElement {
             img: null,
             title: null,
             price: null,
-            description: null
+            description: null,
+            product_firebase_id: null
         }
         return Object.keys(properties);
     }
@@ -48,6 +51,8 @@ export class recommendedSectionCard extends HTMLElement {
             case recommendedSectionCardProperties.description:
                 this.properties.description = newValue
                 break;
+            case recommendedSectionCardProperties.product_firebase_id:
+                this.properties.product_firebase_id = newValue
             default:
                 break;
         }
@@ -94,7 +99,7 @@ export class recommendedSectionCard extends HTMLElement {
 
         cardContainer.addEventListener("click", () => {
             dispatch(
-                changeViewProduct(this.properties.title)
+                changeViewProduct(this.properties.product_firebase_id)
             )
             dispatch(
                 changeScreen(Screens.productDetail)

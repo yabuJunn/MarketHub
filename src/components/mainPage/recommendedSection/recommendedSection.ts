@@ -1,5 +1,6 @@
 import "../../export"
 import { dataGeneral } from "../../../../data"
+import { databaseProducts } from "../../../utilities/databaseProducts"
 
 export class RecommendedSection extends HTMLElement {
     constructor() {
@@ -26,20 +27,13 @@ export class RecommendedSection extends HTMLElement {
         //Append childs of recommendedContainer
         recommendedContainer.appendChild(title)
         recommendedContainer.appendChild(recommendedCardsContainer)
-        dataGeneral.recommended.map((element) => {
+        databaseProducts.forEach((product) => {
             const card = this.ownerDocument.createElement("recommended_section-card")
-            card.setAttribute("img", `${element.img}`)
-            card.setAttribute("title", `${element.title}`)
-            card.setAttribute("price", `${element.price}`)
-            card.setAttribute("description", `${element.description}`)
-            recommendedCardsContainer.appendChild(card)
-        })
-        dataGeneral.recommended.map((element) => {
-            const card = this.ownerDocument.createElement("recommended_section-card")
-            card.setAttribute("img", `${element.img}`)
-            card.setAttribute("title", `${element.title}`)
-            card.setAttribute("price", `${element.price}`)
-            card.setAttribute("description", `${element.description}`)
+            card.setAttribute("img", `${product.imageURL}`)
+            card.setAttribute("title", `${product.name}`)
+            card.setAttribute("price", `${product.price}`)
+            card.setAttribute("description", `${product.description}`)
+            card.setAttribute("product_firebase_id", product.productFirebaseID) 
             recommendedCardsContainer.appendChild(card)
         })
         //Append childs of this.shadowRoot

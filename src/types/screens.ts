@@ -14,10 +14,3 @@ export enum Screens {
     "myProductsPage" = "myProductsPage",
     "changeDataPage" = "changeDataPage"
 }
-
-export interface product {
-    img: string,
-    title: string,
-    price: string,
-    description: string
-}

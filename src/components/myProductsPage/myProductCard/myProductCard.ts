@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 const enum myProductCardProperties {
     title = "title",
     desc = "desc",
@@ -70,7 +72,7 @@ export class myProductCard extends HTMLElement {
 
             const productImage = this.ownerDocument.createElement("div")
             productImage.classList.add("productImage")
-            productImage.style.backgroundImage = "url(/src/resources/jpg/sofaMainPage.jpg)"
+            productImage.style.backgroundImage = `url(${this.properties.image})`
             myProductCardContainer.appendChild(productImage)
 
             const productInfoContainer = this.ownerDocument.createElement("div")
@@ -78,11 +80,11 @@ export class myProductCard extends HTMLElement {
             myProductCardContainer.appendChild(productInfoContainer)
 
             const productTitle = this.ownerDocument.createElement("h2")
-            productTitle.innerText = "Cookie dough chocolate chips corona 250g"
+            productTitle.innerText = this.properties.title
             productInfoContainer.appendChild(productTitle)
 
             const productDesc = this.ownerDocument.createElement("p")
-            productDesc.innerText = "Prepare delicious desserts, cookies, milkshakes or make..."
+            productDesc.innerText = this.properties.desc
             productInfoContainer.appendChild(productDesc)
 
             const priceAndInfoContainer = this.ownerDocument.createElement("div")
@@ -98,7 +100,7 @@ export class myProductCard extends HTMLElement {
             priceContainer.appendChild(priceTitle)
             
             const priceDesc = this.ownerDocument.createElement("p")
-            priceDesc.innerText = "COP $23.500"
+            priceDesc.innerText = this.properties.price
             priceContainer.appendChild(priceDesc)
 
             const dateContainer = this.ownerDocument.createElement("div")
@@ -110,7 +112,7 @@ export class myProductCard extends HTMLElement {
             dateContainer.appendChild(dateTitle)
 
             const dateDesc = this.ownerDocument.createElement("p")
-            dateDesc.innerText = "12/09/2023"
+            dateDesc.innerText = this.properties.date
             dateContainer.appendChild(dateDesc)
 
             const buttonContainer = this.ownerDocument.createElement("div")

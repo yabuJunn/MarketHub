@@ -16,7 +16,8 @@ export enum Actions {
   "CHANGE_LOGED_USER_ID" = "CHANGE_LOGED_USER_ID",
   "CHANGE_LOGED_USER_DATA" = "CHANGE_LOGED_USER_DATA",
   "RESTART_GLOBAL_STORE" = "RESTART_GLOBAL_STORE",
-  "UPDATE_DATABASE_PRODUCTS" = "UPDATE_DATABASE_PRODUCTS"
+  "UPDATE_DATABASE_PRODUCTS" = "UPDATE_DATABASE_PRODUCTS",
+  "UPDATE_MY_PRODUCTS_SEARCH" = "UPDATE_MY_PRODUCTS_SEARCH"
 }
 
 export interface AppState {
@@ -25,7 +26,8 @@ export interface AppState {
   viewProduct: string,
   sideMenu: boolean,
   logedUserData: logedUserDataType,
-  databaseProducts: Array<databaseProduct>
+  databaseProducts: Array<databaseProduct>,
+  myProductsSearch: string
 }
 
 export interface logedUserDataType {
