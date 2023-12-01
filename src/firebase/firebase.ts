@@ -1,13 +1,14 @@
 import { firebaseConfig } from "./firebaseConfig";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, updateDoc, getDocs, doc, getDoc, setDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, updateDoc, getDocs, doc, getDoc, setDoc, DocumentData } from "firebase/firestore";
 import { dataUsers } from "../utilities/getDataUsers";
 import { dispatch, state } from "../store";
 import { changeLogedUserData, changeScreen } from "../store/actions";
 import { Screens } from "../types/screens";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { makeid } from "../utilities/generateRandomID";
-import { databaseProducts, reiniciarDatabaseProducts } from "../utilities/databaseProducts";
+import { actualizarDataBaseProducts, databaseProducts, reiniciarDatabaseProducts } from "../utilities/databaseProducts";
+import { databaseProduct } from "../types/databaseProductsType";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -121,9 +122,10 @@ const actualizarUploadedProductsDelUser = async (productID: string, userFirebase
 
 export const traerDatabaseProducts = async () => {
   reiniciarDatabaseProducts()
+  const newProductsArray: Array<databaseProduct | DocumentData> = []
   const querySnapshot = await getDocs(collection(db, "products"));
   querySnapshot.forEach((doc) => {
-    databaseProducts.push(doc.data())
+    newProductsArray.push(doc.data())
   });
-  console.log(databaseProducts)
+  actualizarDataBaseProducts(newProductsArray)
 }

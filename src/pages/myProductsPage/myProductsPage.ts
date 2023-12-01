@@ -4,6 +4,7 @@ import { traerDatabaseProducts } from "../../firebase/firebase"
 import { state } from "../../store"
 import { databaseProduct } from "../../types/databaseProductsType"
 import { databaseProducts, pedirProducts, reiniciarDatabaseProducts } from "../../utilities/databaseProducts"
+import { Timestamp } from "firebase/firestore"
 
 export class myProductsPage extends HTMLElement {
     constructor() {
@@ -12,7 +13,6 @@ export class myProductsPage extends HTMLElement {
     }
 
     async connectedCallback() {
-        reiniciarDatabaseProducts()
         await traerDatabaseProducts()
         await this.render()
     }
@@ -67,7 +67,9 @@ export class myProductsPage extends HTMLElement {
                 myProductCard.setAttribute("title", product.name)
                 myProductCard.setAttribute("desc", product.description)
                 myProductCard.setAttribute("price", product.price)
-                myProductCard.setAttribute("date", product.uploadDate)
+                const timestamp = new Timestamp(product.uploadDate.seconds, product.uploadDate.nanoseconds)
+                const timestampDate = timestamp.toDate()
+                myProductCard.setAttribute("date", `${timestampDate}`)
                 myProductCard.setAttribute("image", product.imageURL)
                 myProductsCardsContainer.appendChild(myProductCard)
             })

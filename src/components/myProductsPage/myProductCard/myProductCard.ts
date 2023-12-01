@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 const enum myProductCardProperties {
     title = "title",
     desc = "desc",

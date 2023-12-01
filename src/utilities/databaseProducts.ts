@@ -13,3 +13,8 @@ export const pedirProducts = async () => {
     //reiniciarDatabaseProducts()
     await traerDatabaseProducts()
 }
+
+export const actualizarDataBaseProducts = (newProductsArray: Array<databaseProduct | DocumentData>) => {
+    databaseProducts = newProductsArray
+    console.log(databaseProducts)
+}
