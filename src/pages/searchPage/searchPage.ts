@@ -45,8 +45,8 @@ export class SearchPage extends HTMLElement {
             optionsTitle.innerHTML = `Results for "${state.searchText}"...`
             optionsContainer.appendChild(optionsTitle)
 
-            const optionsInformation = this.ownerDocument.createElement("options-information")
-            optionsContainer.appendChild(optionsInformation)
+            // const optionsInformation = this.ownerDocument.createElement("options-information")
+            // optionsContainer.appendChild(optionsInformation)
 
             databaseProducts.forEach((product) => {
                 if (product.name.toLowerCase().includes(state.searchText!.toLocaleLowerCase())) {

@@ -52,11 +52,6 @@ export class NavBarRed extends HTMLElement {
             uploadButton.setAttribute("src", "/src/resources/svg/navIcons/light/uploadLight.svg")
             navContainer.appendChild(uploadButton)
 
-            const cartButton = this.ownerDocument.createElement("img")
-            cartButton.classList.add("navIcon")
-            cartButton.setAttribute("src", "/src/resources/svg/navIcons/light/cartLight.svg")
-            navContainer.appendChild(cartButton)
-
             const menuButton = this.ownerDocument.createElement("img")
             menuButton.classList.add("navIcon")
             menuButton.setAttribute("src", "/src/resources/svg/navIcons/light/menuLight.svg")
@@ -85,12 +80,6 @@ export class NavBarRed extends HTMLElement {
             uploadButton.addEventListener("click", () => {
                 dispatch(
                     changeScreen(Screens.uploadProduct)
-                )
-            })
-
-            cartButton.addEventListener("click", () => {
-                dispatch(
-                    changeScreen(Screens.shoopingList)
                 )
             })
 
