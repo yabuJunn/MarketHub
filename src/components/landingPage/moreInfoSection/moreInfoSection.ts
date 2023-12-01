@@ -14,10 +14,10 @@ export class MoreInfoSection extends HTMLElement {
         if(this.shadowRoot){
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/landingPage/moreInfoSection/moreInfoSection.css")
+            link.setAttribute("href", "../src/components/landingPage/moreInfoSection/moreInfoSection.css")
             this.shadowRoot.innerHTML = `
                 <div class="more-info-container">
-                <img src="/src/resources/jpg/chicaRubia.png" />
+                <img src="../src/resources/jpg/chicaRubia.png" />
                     <div class="more-info-content">
                         <h1>A close feeling!</h1>
                         <p>The strong feeling of control and closeness of yout city in the comoddity of yout house. Take the trends of your shopping with a transparent advertaiment of products and clean sellers.</p> 

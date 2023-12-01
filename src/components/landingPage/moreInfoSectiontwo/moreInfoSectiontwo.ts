@@ -1,4 +1,3 @@
-import "../../export";
 
 export class MoreInfoSectiontwo extends HTMLElement {
     constructor() {
@@ -14,14 +13,14 @@ export class MoreInfoSectiontwo extends HTMLElement {
         if(this.shadowRoot){
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/landingPage/moreInfoSectiontwo/moreInfoSectiontwo.css")
+            link.setAttribute("href", "../src/components/landingPage/moreInfoSectiontwo/moreInfoSectiontwo.css")
             this.shadowRoot.innerHTML = `
                 <div class="more-info-containertwo">
                     <div class="more-info-content">
                         <h2>Brand new things for your home!</h2>
                         <p>Find everything you would need for the commodities of your place. Buy all sort of furniture and decorations to make your house feel like yours.</p>
                     </div>
-                    <img src="/src/resources/jpg/sillonComodo.png" />
+                    <img src="../src/resources/jpg/sillonComodo.png" />
                 </div>
             `;
 

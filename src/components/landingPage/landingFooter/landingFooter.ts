@@ -14,7 +14,7 @@ export class LandingFooter extends HTMLElement {
         if(this.shadowRoot){
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/landingPage/landingFooter/landingFotter.css")
+            link.setAttribute("href", "../src/components/landingPage/landingFooter/landingFotter.css")
             this.shadowRoot.appendChild(link);
 
             const footerContainer = this.ownerDocument.createElement("div")
@@ -22,7 +22,7 @@ export class LandingFooter extends HTMLElement {
             this.shadowRoot.appendChild(footerContainer)
 
             const logo = this.ownerDocument.createElement("img")
-            logo.setAttribute("src", "/src/resources/svg/logo_light_new.svg")
+            logo.setAttribute("src", "../src/resources/svg/logo_light_new.svg")
             footerContainer.appendChild(logo)
         }
     }

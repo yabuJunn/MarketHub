@@ -14,7 +14,7 @@ export class DescriptionSection extends HTMLElement {
         if(this.shadowRoot){
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/landingPage/descriptionSection/descriptionSection.css")
+            link.setAttribute("href", "../src/components/landingPage/descriptionSection/descriptionSection.css")
             this.shadowRoot.innerHTML = `
                 <div class="description-container">
                     <div class="description-content">
@@ -26,7 +26,7 @@ export class DescriptionSection extends HTMLElement {
                         </div>
                     </div>
 
-                    <img src="/src/resources/jpg/mujerBolsas.png"> 
+                    <img src="../src/resources/jpg/mujerBolsas.png"> 
                 </div>
             `;
 
