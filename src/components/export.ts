@@ -29,6 +29,9 @@ export { NavBarEmpty } from './navBar/navBarEmpty/navBarEmpty'
 export { NavBarRed } from './navBar/navBarRed/navBarRed'
 export { NavBarWhite } from './navBar/navBarWhite/navBarWhite'
 
+//Side Menu
+export { sideMenu } from './sideMenu/sideMenu'
+
 //SignUp
 export { SignUp } from '../pages/signUp/signUp'
 export { SignUpMenu } from './signUp/signUpMenu/signUpMenu'
@@ -50,11 +53,40 @@ export { SearchOption } from './searchPage/optionsInformation/searchOption/searc
 export { searchResultsCard } from './searchPage/searchResultsCard/searchResultsCard'
 
 //Product detail
-export {ProductDetail} from '../pages/productDetail/productDetail'
+export { ProductDetail } from '../pages/productDetail/productDetail'
 export { ProductDetailCard } from './productdetailcomp/productdetailcard/productdetailcard'
-export {ProductDetailComments} from './productdetailcomp/productdetailcomment/productdetailcomment'
+export { ProductDetailComments } from './productdetailcomp/productdetailcomment/productdetailcomment'
 
 //Shooping List
 export { ShopingList } from '../pages/shopingList/shopingList'
 export { ShopingListCard } from './shoopingPage/shopingListCard/shopingListCard'
 export { PurchaseSummary } from './shoopingPage/purchaseSummary/purchaseSummary'
+
+//User Information
+export { userInformationPage } from '../pages/userInformationPage/userInformationPage'
+export { userInfoTitle } from './userInformationPage/userInfoTitle/userInfoTitle'
+export { userInfoRest } from './userInformationPage/userInfoRest/userInfoRest'
+
+//Upload Product
+export { uploadProductPage } from '../pages/uploadProductPage/uploadProductPage'
+
+//Shooping List
+export { shoopingListPage } from '../pages/shoopingListPage/shoopingListPage'
+export { purchaseSummaryCartList } from './shoopingListPage/purchaseSummary/purchaseSummary'
+export { shoopinListCard } from './shoopingListPage/shoopinListCard/shoopinListCard' //shoopin_list-card
+
+//Payment Page
+export { paymentPage } from '../pages/paymentPage/paymentPage'
+export { paymentSummary } from './paymentPage/paymentSummary/paymentSummary' //payment_summary-payment_page
+export { paymentMenu } from './paymentPage/paymentMenu/paymentMenu' //payment-menu
+
+//My products Page
+export { myProductsPage } from '../pages/myProductsPage/myProductsPage' //my_products-page
+export { myProductsTotalProducts } from './myProductsPage/myProductsTotalProducts/myProductsTotalProducts' //my_products-total_products
+export { myProductsSearch } from './myProductsPage/myProductsSearch/myProductsSearch' //my_products-search
+export { myProductCard } from './myProductsPage/myProductCard/myProductCard' //my_product-card
+
+//Change Data Page
+export { changeDataPage } from '../pages/changeDataPage/changeDataPage' //change_data-page
+export { changeDataTitle } from './changeDataPage/changeDataTitle/changeDataTitle' //change_data-title
+export { changeDataRest } from './changeDataPage/changeDataRest/changeDataRest' //change_data-rest

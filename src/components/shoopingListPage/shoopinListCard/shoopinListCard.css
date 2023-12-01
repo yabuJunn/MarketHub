@@ -1,0 +1,69 @@
+@font-face {
+    font-family: REM;
+    src: url(/src/resources/fonts/REM/REM-VariableFont_wght.ttf);
+}
+
+@media (max-width: 1600px) {
+    .shoopinListCard_Container {
+        width: 100%;
+        height: 144px;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #F24333;
+        display: flex;
+        flex-direction: row;
+        margin: 15px 0 0 0;
+    }
+
+    .shoopinListCard_Container h2,
+    p {
+        margin: 0;
+    }
+
+    .cardImage {
+        height: 100%;
+        aspect-ratio: 1/1;
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+    }
+
+    .infoContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        justify-content: space-around;
+    }
+
+    .infoContainer h2 {
+        color: #F7F4F3;
+        font-family: REM;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .infoContainer p {
+        color: #5F2122;
+        font-family: REM;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .buttonsContainer {
+        display: flex;
+    }
+
+    .buttonsContainer p {
+        color: #EED5C7;
+        font-family: REM;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0 10px 0 0;
+    }
+}

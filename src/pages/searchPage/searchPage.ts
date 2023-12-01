@@ -1,6 +1,8 @@
 import "../../components/export"
 import { dataGeneral } from "../../../data"
 import { state } from "../../store"
+import { traerDatabaseProducts } from "../../firebase/firebase"
+import { databaseProducts } from "../../utilities/databaseProducts"
 
 export class SearchPage extends HTMLElement {
     constructor() {
@@ -8,11 +10,12 @@ export class SearchPage extends HTMLElement {
         this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback() {
-        this.render()
+    async connectedCallback() {
+        await traerDatabaseProducts()
+        await this.render()
     }
 
-    render() {
+    async render() {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
@@ -42,16 +45,17 @@ export class SearchPage extends HTMLElement {
             optionsTitle.innerHTML = `Results for "${state.searchText}"...`
             optionsContainer.appendChild(optionsTitle)
 
-            const optionsInformation = this.ownerDocument.createElement("options-information")
-            optionsContainer.appendChild(optionsInformation)
+            // const optionsInformation = this.ownerDocument.createElement("options-information")
+            // optionsContainer.appendChild(optionsInformation)
 
-            dataGeneral.recommended.map((product) => {
-                if (product.title.toLowerCase().includes(state.searchText!.toLocaleLowerCase())) {
+            databaseProducts.forEach((product) => {
+                if (product.name.toLowerCase().includes(state.searchText!.toLocaleLowerCase())) {
                     const productResultCard = this.ownerDocument.createElement("search_results-card")
-                    productResultCard.setAttribute("img", `${product.img}`)
-                    productResultCard.setAttribute("title", `${product.title}`)
+                    productResultCard.setAttribute("img", `${product.imageURL}`)
+                    productResultCard.setAttribute("title", `${product.name}`)
                     productResultCard.setAttribute("price", `${product.price}`)
                     productResultCard.setAttribute("desc", `${product.description}`)
+                    productResultCard.setAttribute("product_firebase_id", product.productFirebaseID)
                     resultsContainer.appendChild(productResultCard)
                 }
             })

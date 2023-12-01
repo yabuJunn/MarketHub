@@ -1,6 +1,7 @@
 import { state, addObserver } from "./store/index"
 import { Screens } from "./types/screens"
 import "./components/export"
+import "./utilities/generateRandomID"
 
 class AppContainer extends HTMLElement {
     constructor() {
@@ -16,7 +17,10 @@ class AppContainer extends HTMLElement {
     render() {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
             this.shadowRoot.innerHTML = ""
-            document.body.classList.remove(...document.body.classList)
+            document.body.classList.remove("landingPage")
+
+            const sideMenu = this.ownerDocument.createElement("side-menu")
+            this.shadowRoot.appendChild(sideMenu)
 
             switch (state.screen) {
                 case Screens.landingPage:
@@ -51,6 +55,31 @@ class AppContainer extends HTMLElement {
                 case Screens.productDetail:
                     const productDetail = this.ownerDocument.createElement("product-detail")
                     this.shadowRoot.appendChild(productDetail)
+                    break
+                case Screens.userInformation:
+                    const userInformation = this.ownerDocument.createElement("userinformationpage-page")
+                    this.shadowRoot.appendChild(userInformation)
+                    break
+                case Screens.uploadProduct:
+                    const uploadProduct = this.ownerDocument.createElement("uploadproduct-page")
+                    this.shadowRoot.appendChild(uploadProduct)
+                    break
+                case Screens.shoopingList:
+                    const shoopingListPage = this.ownerDocument.createElement("shooping_list-page")
+                    this.shadowRoot.appendChild(shoopingListPage)
+                    break
+                case Screens.paymentPage:
+                    const paymentPage = this.ownerDocument.createElement("payment-page")
+                    this.shadowRoot.appendChild(paymentPage)
+                    break
+                case Screens.myProductsPage:
+                    const myProductsPage = this.ownerDocument.createElement("my_products-page")
+                    this.shadowRoot.appendChild(myProductsPage)
+                    break
+                case Screens.changeDataPage:
+                    const changeDataPage = this.ownerDocument.createElement("change_data-page")
+                    this.shadowRoot.appendChild(changeDataPage)
+                    break
                 default:
                     break;
             }

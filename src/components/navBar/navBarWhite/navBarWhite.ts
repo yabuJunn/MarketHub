@@ -1,5 +1,5 @@
 import { dispatch } from "../../../store";
-import { changeScreen, changeSeaarchText } from "../../../store/actions";
+import { changeScreen, changeSeaarchText, sideMenuVisibility } from "../../../store/actions";
 import { Screens } from "../../../types/screens";
 import "../../export";
 
@@ -46,11 +46,6 @@ export class NavBarWhite extends HTMLElement {
             uploadButton.setAttribute("src", "/src/resources/svg/navIcons/dark/uploadDark.svg")
             navContainer.appendChild(uploadButton)
 
-            const cartButton = this.ownerDocument.createElement("img")
-            cartButton.classList.add("navIcon")
-            cartButton.setAttribute("src", "/src/resources/svg/navIcons/dark/cartDark.svg")
-            navContainer.appendChild(cartButton)
-
             const menuButton = this.ownerDocument.createElement("img")
             menuButton.classList.add("navIcon")
             menuButton.setAttribute("src", "/src/resources/svg/navIcons/dark/menuDark.svg")
@@ -66,6 +61,24 @@ export class NavBarWhite extends HTMLElement {
                 )
                 dispatch(
                     changeScreen(Screens.mainPage)
+                )
+            })
+
+            userButton.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.userInformation)
+                )
+            })
+
+            uploadButton.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.uploadProduct)
+                )
+            })
+
+            menuButton.addEventListener("click", () => {
+                dispatch(
+                    sideMenuVisibility(true)
                 )
             })
         }

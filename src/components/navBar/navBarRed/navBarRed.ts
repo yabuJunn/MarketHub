@@ -1,5 +1,5 @@
 import { dispatch } from "../../../store";
-import { changeScreen, changeSeaarchText } from "../../../store/actions";
+import { changeScreen, changeSeaarchText, sideMenuVisibility } from "../../../store/actions";
 import { Screens } from "../../../types/screens";
 import "../../export";
 
@@ -10,7 +10,13 @@ export class NavBarRed extends HTMLElement {
     }
 
     connectedCallback() {
-        this.render();
+        this.mount();
+
+    }
+
+    mount() {
+        this.render()
+        const logo = this.shadowRoot?.getElementById("logo")
     }
 
     render() {
@@ -46,11 +52,6 @@ export class NavBarRed extends HTMLElement {
             uploadButton.setAttribute("src", "/src/resources/svg/navIcons/light/uploadLight.svg")
             navContainer.appendChild(uploadButton)
 
-            const cartButton = this.ownerDocument.createElement("img")
-            cartButton.classList.add("navIcon")
-            cartButton.setAttribute("src", "/src/resources/svg/navIcons/light/cartLight.svg")
-            navContainer.appendChild(cartButton)
-
             const menuButton = this.ownerDocument.createElement("img")
             menuButton.classList.add("navIcon")
             menuButton.setAttribute("src", "/src/resources/svg/navIcons/light/menuLight.svg")
@@ -67,6 +68,24 @@ export class NavBarRed extends HTMLElement {
                 )
                 dispatch(
                     changeScreen(Screens.mainPage)
+                )
+            })
+
+            userButton.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.userInformation)
+                )
+            })
+
+            uploadButton.addEventListener("click", () => {
+                dispatch(
+                    changeScreen(Screens.uploadProduct)
+                )
+            })
+
+            menuButton.addEventListener("click", () => {
+                dispatch(
+                    sideMenuVisibility(true)
                 )
             })
         }

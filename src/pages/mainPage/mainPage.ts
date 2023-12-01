@@ -1,4 +1,9 @@
 import "../../components/export"
+import { traerDatabaseProducts, traerDatosUsuarioRegistrado } from "../../firebase/firebase"
+import { dispatch, state } from "../../store"
+import { changeScreen } from "../../store/actions"
+import { Screens } from "../../types/screens"
+import { pedirProducts, reiniciarDatabaseProducts } from "../../utilities/databaseProducts"
 
 export class MainPage extends HTMLElement {
     constructor() {
@@ -6,12 +11,26 @@ export class MainPage extends HTMLElement {
         this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+        if (localStorage.getItem("logedFirebaseID") === null) {
+            alert("No hay usuario registrado")
+            dispatch(
+                changeScreen(Screens.landingPage)
+            )
+        }
+
+        if (state.logedUserData.firebaseID === null) {
+            await traerDatosUsuarioRegistrado(`${localStorage.getItem("logedFirebaseID")}`)
+        }
+        await traerDatabaseProducts()
         this.render()
     }
 
-    render() {
+    async render() {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
+            console.log("Render MainPage")
+            //Especificamente primero el traerDatabaseProducts y luego el reiniciarDatabaseProducts para que no se dupliquen los productos
+
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
             link.setAttribute("href", "/src/pages/mainPage/mainPage.css")

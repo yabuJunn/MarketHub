@@ -7,7 +7,20 @@ const observers: Observer[] = [];
 export let state: AppState = {
     screen: Screens.landingPage,
     searchText: "",
-    viewProduct: ""
+    viewProduct: "",
+    sideMenu: false,
+    logedUserData: {
+        name: null,
+        email: null,
+        password: null,
+        cellphone: null,
+        userID: null,
+        identificationDocument: null,
+        firebaseID: null,
+        uploadedProducts: null
+    },
+    databaseProducts: [],
+    myProductsSearch: ""
 };
 
 export const dispatch = (action: Action) => {

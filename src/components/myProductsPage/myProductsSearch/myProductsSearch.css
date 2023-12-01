@@ -1,0 +1,91 @@
+@font-face {
+    font-family: REM;
+    src: url(/src/resources/fonts/REM/REM-VariableFont_wght.ttf);
+}
+
+@media (max-width: 1600px) {
+    #myProductsSearchContainer {
+        width: 100%;
+        border-radius: 22px;
+        background: #F7F4F3;
+        padding: 15px 0 15px 0;
+        margin: 20px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: sticky;
+    }
+
+    #myProductsSearchContainer h2,
+    h3,
+    p {
+        margin: 0;
+    }
+
+    #myProductsSearchContainer h2 {
+        color: #F24333;
+        font-family: REM;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        width: 90%;
+    }
+
+    #searchContainer {
+        background-color: #F24333;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        margin: 15px 0 0 0;
+    }
+
+    #searchContainer img {
+        height: 80%;
+        margin: 0 0 0 10px;
+    }
+
+    #searchContainer input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 2px;
+        color: #F7F4F3;
+        margin: 0 0 0 4px;
+
+        font-family: REM;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    #searchContainer input::placeholder {
+        color: #ededed;
+        font-size: 14px;
+        font-family: REM;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    #searchContainer input:focus {
+        outline: none;
+    }
+
+    #myProductsSearchContainer p {
+        width: 90%;
+        margin: 5px 0 0 0;
+        text-align: left;
+        color: #F24333;
+        font-family: REM;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}

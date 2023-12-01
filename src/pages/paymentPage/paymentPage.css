@@ -1,0 +1,28 @@
+@font-face {
+    font-family: REM;
+    src: url(/src/resources/fonts/REM/REM-VariableFont_wght.ttf);
+}
+
+@media (max-width: 1600px) {
+    #paymentPage {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 110px 0 0 0;
+        background-color: #F24333;
+    }
+
+    #summaryPaymentContainer {
+        width: 30%;
+        min-height: 100vh;
+        margin: 0 15px 0 0;
+    }
+
+    #paymentMenuContainer {
+        width: 60%;
+        min-height: 100vh; 
+        margin: 0 0 0 15px;
+    }
+}
