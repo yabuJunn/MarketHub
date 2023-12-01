@@ -1,3 +1,6 @@
+import { dispatch } from "../../../store"
+import { updateMyProductsSearch } from "../../../store/actions"
+
 export class myProductsSearch extends HTMLElement {
     constructor() {
         super()
@@ -22,7 +25,7 @@ export class myProductsSearch extends HTMLElement {
             const myProductsSearchTitle = this.ownerDocument.createElement("h2")
             myProductsSearchTitle.innerText = "Search"
             mainContainer.appendChild(myProductsSearchTitle)
-            
+
             const searchContainer = this.ownerDocument.createElement("div")
             searchContainer.setAttribute("id", "searchContainer")
             mainContainer.appendChild(searchContainer)
@@ -34,6 +37,16 @@ export class myProductsSearch extends HTMLElement {
             const searchInput = this.ownerDocument.createElement("input")
             searchInput.setAttribute("placeholder", "Find your product")
             searchContainer.appendChild(searchInput)
+
+            const deleteFilter = this.ownerDocument.createElement("p")
+            deleteFilter.innerText = "Delete Filter"
+            mainContainer.appendChild(deleteFilter)
+
+            searchInput.addEventListener("change", () => {
+                dispatch(
+                    updateMyProductsSearch(searchInput.value)
+                )
+            })
         }
     }
 }

@@ -51,14 +51,20 @@ export const reducer = (action: Action, currentState: AppState): AppState => {
           userID: null,
           firebaseID: null,
           identificationDocument: null,
-          uploadedProducts: null
+          uploadedProducts: null,
         },
-        databaseProducts: []
+        databaseProducts: [],
+        myProductsSearch: ""
       };
     case Actions.UPDATE_DATABASE_PRODUCTS:
       return {
         ...currentState,
         databaseProducts: action.payload
+      }
+    case Actions.UPDATE_MY_PRODUCTS_SEARCH:
+      return {
+        ...currentState,
+        myProductsSearch: action.payload
       }
     default:
       return currentState;

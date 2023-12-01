@@ -63,15 +63,17 @@ export class myProductsPage extends HTMLElement {
             cardsAndInfoContainer.appendChild(myProductsCardsContainer)
 
             userProductsList.forEach((product) => {
-                const myProductCard = this.ownerDocument.createElement("my_product-card")
-                myProductCard.setAttribute("title", product.name)
-                myProductCard.setAttribute("desc", product.description)
-                myProductCard.setAttribute("price", product.price)
-                const timestamp = new Timestamp(product.uploadDate.seconds, product.uploadDate.nanoseconds)
-                const timestampDate = timestamp.toDate()
-                myProductCard.setAttribute("date", `${timestampDate}`)
-                myProductCard.setAttribute("image", product.imageURL)
-                myProductsCardsContainer.appendChild(myProductCard)
+                if (product.name.includes(state.myProductsSearch)) {
+                    const myProductCard = this.ownerDocument.createElement("my_product-card")
+                    myProductCard.setAttribute("title", product.name)
+                    myProductCard.setAttribute("desc", product.description)
+                    myProductCard.setAttribute("price", product.price)
+                    const timestamp = new Timestamp(product.uploadDate.seconds, product.uploadDate.nanoseconds)
+                    const timestampDate = timestamp.toDate()
+                    myProductCard.setAttribute("date", `${timestampDate}`)
+                    myProductCard.setAttribute("image", product.imageURL)
+                    myProductsCardsContainer.appendChild(myProductCard)  
+                }
             })
 
             const moreInfoContainer = this.ownerDocument.createElement("div")

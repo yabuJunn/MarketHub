@@ -56,7 +56,7 @@
         top: 2px;
         color: #F7F4F3;
         margin: 0 0 0 4px;
-        
+
         font-family: REM;
         font-size: 14px;
         font-style: normal;
@@ -75,5 +75,17 @@
 
     #searchContainer input:focus {
         outline: none;
+    }
+
+    #myProductsSearchContainer p {
+        width: 90%;
+        margin: 5px 0 0 0;
+        text-align: left;
+        color: #F24333;
+        font-family: REM;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
     }
 }

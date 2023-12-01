@@ -19,7 +19,8 @@ export let state: AppState = {
         firebaseID: null,
         uploadedProducts: null
     },
-    databaseProducts: []
+    databaseProducts: [],
+    myProductsSearch: ""
 };
 
 export const dispatch = (action: Action) => {
