@@ -58,7 +58,7 @@ export class SalesCard extends HTMLElement {
     render() {
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/components/mainPage/salesSection/salesCard/salesCard.css")
+        link.setAttribute("href", "../src/components/mainPage/salesSection/salesCard/salesCard.css")
         this.shadowRoot?.appendChild(link)
 
         const saleCardContainer = this.ownerDocument.createElement("div")

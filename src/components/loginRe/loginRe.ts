@@ -19,7 +19,7 @@ export class loginregister extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link");
             link.setAttribute("rel", "stylesheet");
-            link.setAttribute("href", "/src/components/loginRe/loginRe.css");
+            link.setAttribute("href", "../src/components/loginRe/loginRe.css");
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("section");
@@ -41,12 +41,12 @@ export class loginregister extends HTMLElement {
 
             const emailInput = this.ownerDocument.createElement('signup-input');
             emailInput.setAttribute('placeholder', 'Enter your email');
-            emailInput.setAttribute('icon', '/src/resources/svg/Icons/Email.svg');
+            emailInput.setAttribute('icon', '../src/resources/svg/Icons/Email.svg');
             centralBox.appendChild(emailInput);
 
             const passwordInput = this.ownerDocument.createElement('signup-input');
             passwordInput.setAttribute('placeholder', 'Enter your password');
-            passwordInput.setAttribute('icon', '/src/resources/svg/Icons/Lock.svg');
+            passwordInput.setAttribute('icon', '../src/resources/svg/Icons/Lock.svg');
             centralBox.appendChild(passwordInput);
 
 

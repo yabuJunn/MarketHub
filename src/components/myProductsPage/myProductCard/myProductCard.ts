@@ -69,7 +69,7 @@ export class myProductCard extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/myProductsPage/myProductCard/myProductCard.css")
+            link.setAttribute("href", "../src/components/myProductsPage/myProductCard/myProductCard.css")
             this.shadowRoot?.appendChild(link)
 
             const myProductCardContainer = this.ownerDocument.createElement("div")

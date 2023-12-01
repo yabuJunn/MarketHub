@@ -13,7 +13,7 @@ export class CategoriesSection extends HTMLElement {
     render() {
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/components/mainPage/categoriesSection/categoriesSection.css")
+        link.setAttribute("href", "../src/components/mainPage/categoriesSection/categoriesSection.css")
         this.shadowRoot?.appendChild(link)
 
         const sectionsContainer = this.ownerDocument.createElement("div")

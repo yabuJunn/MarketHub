@@ -14,7 +14,7 @@ export class newsSection extends HTMLElement {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/mainPage/newSection/newSection.css")
+            link.setAttribute("href", "../src/components/mainPage/newSection/newSection.css")
             this.shadowRoot.appendChild(link)
 
             const newsSectionContaier = this.ownerDocument.createElement("section")

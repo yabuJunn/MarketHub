@@ -32,7 +32,7 @@ export class myProductsPage extends HTMLElement {
 
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/pages/myProductsPage/myProductsPage.css")
+            link.setAttribute("href", "../src/pages/myProductsPage/myProductsPage.css")
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("section");

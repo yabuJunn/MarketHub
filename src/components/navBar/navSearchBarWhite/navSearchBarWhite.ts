@@ -16,7 +16,7 @@ export class NavSearchBarWhite extends HTMLElement {
     render() {
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/components/navBar/navSearchBarWhite/navSearchBarWhite.css")
+        link.setAttribute("href", "../src/components/navBar/navSearchBarWhite/navSearchBarWhite.css")
         this.shadowRoot?.appendChild(link)
 
         const searchBarContainer = this.ownerDocument.createElement("div")
@@ -25,7 +25,7 @@ export class NavSearchBarWhite extends HTMLElement {
 
         const searchLogo = this.ownerDocument.createElement("img")
         searchLogo.setAttribute("id", "navSearchLogo")
-        searchLogo.setAttribute("src", "/src/resources/svg/navIcons/searchLight.svg")
+        searchLogo.setAttribute("src", "../src/resources/svg/navIcons/searchLight.svg")
         searchBarContainer.appendChild(searchLogo)
         
         const searchInput = this.ownerDocument.createElement("input")

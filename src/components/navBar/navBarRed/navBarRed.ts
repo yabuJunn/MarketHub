@@ -23,7 +23,7 @@ export class NavBarRed extends HTMLElement {
         if (this.shadowRoot) {
             const link = document.createElement("link");
             link.setAttribute("rel", "stylesheet");
-            link.setAttribute("href", "/src/components/navBar/navBarRed/navBarRed.css");
+            link.setAttribute("href", "../src/components/navBar/navBarRed/navBarRed.css");
             this.shadowRoot.appendChild(link);
 
             const navContainer = this.ownerDocument.createElement("div")
@@ -32,7 +32,7 @@ export class NavBarRed extends HTMLElement {
 
             const logo = this.ownerDocument.createElement("img")
             logo.setAttribute("id", "logo")
-            logo.setAttribute("src", "/src/resources/svg/logo_light_new.svg")
+            logo.setAttribute("src", "../src/resources/svg/logo_light_new.svg")
             navContainer.appendChild(logo)
 
             const searchBarRed = this.ownerDocument.createElement("navsearchbar-red")
@@ -44,17 +44,17 @@ export class NavBarRed extends HTMLElement {
 
             const userButton = this.ownerDocument.createElement("img")
             userButton.classList.add("navIcon")
-            userButton.setAttribute("src", "/src/resources/svg/navIcons/light/userLight.svg")
+            userButton.setAttribute("src", "../src/resources/svg/navIcons/light/userLight.svg")
             navContainer.appendChild(userButton)
 
             const uploadButton = this.ownerDocument.createElement("img")
             uploadButton.classList.add("navIcon")
-            uploadButton.setAttribute("src", "/src/resources/svg/navIcons/light/uploadLight.svg")
+            uploadButton.setAttribute("src", "../src/resources/svg/navIcons/light/uploadLight.svg")
             navContainer.appendChild(uploadButton)
 
             const menuButton = this.ownerDocument.createElement("img")
             menuButton.classList.add("navIcon")
-            menuButton.setAttribute("src", "/src/resources/svg/navIcons/light/menuLight.svg")
+            menuButton.setAttribute("src", "../src/resources/svg/navIcons/light/menuLight.svg")
             menuButton.setAttribute("screen", Screens.landingPage)
             navContainer.appendChild(menuButton)
 

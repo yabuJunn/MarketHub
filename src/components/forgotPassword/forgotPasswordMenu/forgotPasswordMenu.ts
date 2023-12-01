@@ -14,7 +14,7 @@ export class forgotPasswordMenu extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/forgotPassword/forgotPasswordMenu/forgotPasswordMenu.css")
+            link.setAttribute("href", "../src/components/forgotPassword/forgotPasswordMenu/forgotPasswordMenu.css")
             this.shadowRoot.appendChild(link);
 
             const menuForgotPasswordContainer = this.ownerDocument.createElement("div")
@@ -34,12 +34,12 @@ export class forgotPasswordMenu extends HTMLElement {
             menuForgotPasswordContainer.appendChild(codeInput)
 
             const newPasswordInput = this.ownerDocument.createElement("signup-input")
-            newPasswordInput.setAttribute("icon", "/src/resources/svg/Icons/Lock.svg")
+            newPasswordInput.setAttribute("icon", "../src/resources/svg/Icons/Lock.svg")
             newPasswordInput.setAttribute("placeholder", "New password")
             menuForgotPasswordContainer.appendChild(newPasswordInput)
 
             const confirmNewPasswordInput = this.ownerDocument.createElement("signup-input")
-            confirmNewPasswordInput.setAttribute("icon", "/src/resources/svg/Icons/Lock.svg")
+            confirmNewPasswordInput.setAttribute("icon", "../src/resources/svg/Icons/Lock.svg")
             confirmNewPasswordInput.setAttribute("placeholder", "Confirm new password")
             menuForgotPasswordContainer.appendChild(confirmNewPasswordInput)
 

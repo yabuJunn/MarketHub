@@ -15,7 +15,7 @@ export class myProductsSearch extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/myProductsPage/myProductsSearch/myProductsSearch.css")
+            link.setAttribute("href", "../src/components/myProductsPage/myProductsSearch/myProductsSearch.css")
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("div");
@@ -31,7 +31,7 @@ export class myProductsSearch extends HTMLElement {
             mainContainer.appendChild(searchContainer)
 
             const searchIcon = this.ownerDocument.createElement("img")
-            searchIcon.setAttribute("src", "/src/resources/svg/navIcons/searchLight.svg")
+            searchIcon.setAttribute("src", "../src/resources/svg/navIcons/searchLight.svg")
             searchContainer.appendChild(searchIcon)
 
             const searchInput = this.ownerDocument.createElement("input")

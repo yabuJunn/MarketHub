@@ -57,7 +57,7 @@ export class ShopingListCard extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/shoopingPage/shopingListCard/shopingListCard.css")
+            link.setAttribute("href", "../src/components/shoopingPage/shopingListCard/shopingListCard.css")
             this.shadowRoot?.appendChild(link)
 
             const cardContainer = this.ownerDocument.createElement("div")
@@ -66,7 +66,7 @@ export class ShopingListCard extends HTMLElement {
 
             const image = this.ownerDocument.createElement("div")
             image.classList.add("cardImage")
-            image.style.backgroundImage = "url(/src/resources/jpg/platesRecommended.jpg)"
+            image.style.backgroundImage = "url(../src/resources/jpg/platesRecommended.jpg)"
             cardContainer.appendChild(image)
 
             const cardTextContainer = this.ownerDocument.createElement("div")

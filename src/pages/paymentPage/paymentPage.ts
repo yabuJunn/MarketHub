@@ -14,7 +14,7 @@ export class paymentPage extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/pages/paymentPage/paymentPage.css")
+            link.setAttribute("href", "../src/pages/paymentPage/paymentPage.css")
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("section");

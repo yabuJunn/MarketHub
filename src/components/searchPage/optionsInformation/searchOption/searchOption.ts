@@ -61,7 +61,7 @@ export class SearchOption extends HTMLElement {
     render() {
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/components/searchPage/optionsInformation/searchOption/searchOption.css")
+        link.setAttribute("href", "../src/components/searchPage/optionsInformation/searchOption/searchOption.css")
         //Creation of main container
         const optionContainer = this.ownerDocument.createElement("div")
         optionContainer.classList.add("optionContainer")

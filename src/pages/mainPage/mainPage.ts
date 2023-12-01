@@ -33,7 +33,7 @@ export class MainPage extends HTMLElement {
 
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/pages/mainPage/mainPage.css")
+            link.setAttribute("href", "../src/pages/mainPage/mainPage.css")
             this.shadowRoot.appendChild(link)
 
             const mainContainer = this.ownerDocument.createElement("section");

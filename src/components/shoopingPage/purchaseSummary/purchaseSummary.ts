@@ -14,7 +14,7 @@ export class PurchaseSummary extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/shoopingPage/purchaseSummary/purchaseSummary.css")
+            link.setAttribute("href", "../src/components/shoopingPage/purchaseSummary/purchaseSummary.css")
             this.shadowRoot.appendChild(link)
 
             const summaryContainer = this.ownerDocument.createElement("div")

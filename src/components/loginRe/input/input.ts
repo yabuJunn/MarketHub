@@ -44,7 +44,7 @@ export class CustomInput extends HTMLElement {
     render() {
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/components/loginRe/input/input.css")
+        link.setAttribute("href", "../src/components/loginRe/input/input.css")
         this.shadowRoot?.appendChild(link)
 
         const inputContainer = this.ownerDocument.createElement("div")

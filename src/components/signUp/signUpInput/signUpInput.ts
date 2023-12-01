@@ -46,7 +46,7 @@ export class SignUpInput extends HTMLElement {
     render() {
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/components/signUp/signUpInput/signUpInput.css")
+        link.setAttribute("href", "../src/components/signUp/signUpInput/signUpInput.css")
         this.shadowRoot?.appendChild(link)
 
         const inputContainer = this.ownerDocument.createElement("div")

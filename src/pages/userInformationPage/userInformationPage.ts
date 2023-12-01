@@ -17,7 +17,7 @@ export class userInformationPage extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/pages/userInformationPage/userInformationPage.css")
+            link.setAttribute("href", "../src/pages/userInformationPage/userInformationPage.css")
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("section");

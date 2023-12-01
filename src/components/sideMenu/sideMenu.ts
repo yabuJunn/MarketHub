@@ -20,7 +20,7 @@ export class sideMenu extends HTMLElement {
             if (state.sideMenu === true) {
                 const link = this.ownerDocument.createElement("link")
                 link.setAttribute("rel", "stylesheet")
-                link.setAttribute("href", "/src/components/sideMenu/sideMenu.css")
+                link.setAttribute("href", "../src/components/sideMenu/sideMenu.css")
                 this.shadowRoot.appendChild(link);
 
                 const mainContainerSideMenu = this.ownerDocument.createElement("div")

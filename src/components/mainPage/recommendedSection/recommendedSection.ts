@@ -15,7 +15,7 @@ export class RecommendedSection extends HTMLElement {
     render() {
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/components/mainPage/recommendedSection/recommendedSection.css")
+        link.setAttribute("href", "../src/components/mainPage/recommendedSection/recommendedSection.css")
         //Creation of father
         const recommendedContainer = this.ownerDocument.createElement("section")
         recommendedContainer.setAttribute("id", "recommendedContainer")

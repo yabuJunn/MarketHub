@@ -16,7 +16,7 @@ export class changeDataRest extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/changeDataPage/changeDataRest/changeDataRest.css")
+            link.setAttribute("href", "../src/components/changeDataPage/changeDataRest/changeDataRest.css")
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("div")

@@ -17,7 +17,7 @@ export class NavBarWhite extends HTMLElement {
         if (this.shadowRoot) {
             const link = document.createElement("link");
             link.setAttribute("rel", "stylesheet");
-            link.setAttribute("href", "/src/components/navBar/navBarWhite/navBarWhite.css");
+            link.setAttribute("href", "../src/components/navBar/navBarWhite/navBarWhite.css");
             this.shadowRoot.appendChild(link);
 
             const navContainer = this.ownerDocument.createElement("div")
@@ -26,7 +26,7 @@ export class NavBarWhite extends HTMLElement {
 
             const logo = this.ownerDocument.createElement("img")
             logo.setAttribute("id", "logo")
-            logo.setAttribute("src", "/src/resources/svg/logo_dark_new.svg")
+            logo.setAttribute("src", "../src/resources/svg/logo_dark_new.svg")
             navContainer.appendChild(logo)
 
             const searchBarRed = this.ownerDocument.createElement("navsearchbar-white")
@@ -38,17 +38,17 @@ export class NavBarWhite extends HTMLElement {
 
             const userButton = this.ownerDocument.createElement("img")
             userButton.classList.add("navIcon")
-            userButton.setAttribute("src", "/src/resources/svg/navIcons/dark/userDark.svg")
+            userButton.setAttribute("src", "../src/resources/svg/navIcons/dark/userDark.svg")
             navContainer.appendChild(userButton)
 
             const uploadButton = this.ownerDocument.createElement("img")
             uploadButton.classList.add("navIcon")
-            uploadButton.setAttribute("src", "/src/resources/svg/navIcons/dark/uploadDark.svg")
+            uploadButton.setAttribute("src", "../src/resources/svg/navIcons/dark/uploadDark.svg")
             navContainer.appendChild(uploadButton)
 
             const menuButton = this.ownerDocument.createElement("img")
             menuButton.classList.add("navIcon")
-            menuButton.setAttribute("src", "/src/resources/svg/navIcons/dark/menuDark.svg")
+            menuButton.setAttribute("src", "../src/resources/svg/navIcons/dark/menuDark.svg")
             navContainer.appendChild(menuButton)
 
             const rightSpace = this.ownerDocument.createElement("div")

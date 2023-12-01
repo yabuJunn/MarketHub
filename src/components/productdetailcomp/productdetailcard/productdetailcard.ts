@@ -19,7 +19,7 @@ export class ProductDetailCard extends HTMLElement {
             console.log(dataProducto)
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet");
-            link.setAttribute("href", "/src/components/productdetailcomp/productdetailcard/productdetailcard.css");
+            link.setAttribute("href", "../src/components/productdetailcomp/productdetailcard/productdetailcard.css");
             this.shadowRoot.appendChild(link);
 
             const cardContainer = document.createElement("div");
@@ -57,7 +57,7 @@ export class ProductDetailCard extends HTMLElement {
             // Append 5 star images to the rating container
             // for (let i = 0; i < 5; i++) {
             //     const star = document.createElement("img");
-            //     star.setAttribute("src", "/src/resources/svg/Star 1.svg");
+            //     star.setAttribute("src", "../src/resources/svg/Star 1.svg");
             //     star.setAttribute("alt", "Star");
             //     ratingContainer.appendChild(star);
 

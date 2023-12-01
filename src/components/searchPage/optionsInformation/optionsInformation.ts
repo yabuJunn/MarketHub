@@ -13,7 +13,7 @@ export class optionsInformation extends HTMLElement {
     render() {
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/components/searchPage/optionsInformation/optionsInformation.css")
+        link.setAttribute("href", "../src/components/searchPage/optionsInformation/optionsInformation.css")
         //Creation of main component
         const optionsInformationContainer = this.ownerDocument.createElement("div")
         optionsInformationContainer.setAttribute("id", "optionsInformationContainer")

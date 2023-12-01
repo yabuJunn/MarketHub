@@ -49,7 +49,7 @@ export class shoopinListCard extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/components/shoopingListPage/shoopinListCard/shoopinListCard.css")
+            link.setAttribute("href", "../src/components/shoopingListPage/shoopinListCard/shoopinListCard.css")
             this.shadowRoot?.appendChild(link)
 
             const cardContainer = this.ownerDocument.createElement("div")
@@ -58,7 +58,7 @@ export class shoopinListCard extends HTMLElement {
 
             const cardImage = this.ownerDocument.createElement("div")
             cardImage.classList.add("cardImage")
-            cardImage.style.backgroundImage = "url(/src/resources/jpg/platesRecommended.jpg)"
+            cardImage.style.backgroundImage = "url(../src/resources/jpg/platesRecommended.jpg)"
             cardContainer.appendChild(cardImage)
 
             const infoContainer = this.ownerDocument.createElement("div")

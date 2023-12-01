@@ -14,7 +14,7 @@ export class SignUp extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/pages/signUp/signUp.css")
+            link.setAttribute("href", "../src/pages/signUp/signUp.css")
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("section")

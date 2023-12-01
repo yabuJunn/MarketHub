@@ -37,7 +37,7 @@ export class categoriesButton extends HTMLElement {
     render() {
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/components/mainPage/categoriesSection/categoriesButton/categoriesButton.css")
+        link.setAttribute("href", "../src/components/mainPage/categoriesSection/categoriesButton/categoriesButton.css")
         this.shadowRoot?.appendChild(link)
 
         const sectionButton = this.ownerDocument.createElement("button")

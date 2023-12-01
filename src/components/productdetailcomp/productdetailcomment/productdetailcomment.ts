@@ -12,7 +12,7 @@ export class ProductDetailComments extends HTMLElement {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
             const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet");
-        link.setAttribute("href", "/src/components/productdetailcomp/productdetailcomment/productdetailcomment.css");
+        link.setAttribute("href", "../src/components/productdetailcomp/productdetailcomment/productdetailcomment.css");
         this.shadowRoot.appendChild(link);
 
         const commentsContainer = document.createElement("div");
@@ -28,7 +28,7 @@ questionWrapper.setAttribute("class", "question");
 commentsContainer.appendChild(questionWrapper);
 
         const profileImage = document.createElement("img");
-        profileImage.setAttribute("src", "/src/resources/jpg/account_circle_FILL1_wght400_GRAD0_opsz48 1.png");
+        profileImage.setAttribute("src", "../src/resources/jpg/account_circle_FILL1_wght400_GRAD0_opsz48 1.png");
         profileImage.setAttribute("alt", "Profile Image");
         commentsContainer.appendChild(profileImage);
 

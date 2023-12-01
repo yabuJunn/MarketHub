@@ -14,7 +14,7 @@ export class forgotPasswordPage extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/pages/forgotPassword/forgotPassword.css")
+            link.setAttribute("href", "../src/pages/forgotPassword/forgotPassword.css")
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("section");

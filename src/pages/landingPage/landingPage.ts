@@ -24,7 +24,7 @@ export class LandingPage extends HTMLElement {
 
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "../src/pages/landingPage/landingPage.css")
+            link.setAttribute("href", "..../src/pages/landingPage/landingPage.css")
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("section")

@@ -38,7 +38,7 @@ export class NavIconButton extends HTMLElement {
     render() {
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/components/navBar/navIconButton/navIconButton.css")
+        link.setAttribute("href", "../src/components/navBar/navIconButton/navIconButton.css")
 
         const iconContainer = this.ownerDocument.createElement("div")
         const icon = this.ownerDocument.createElement("img")

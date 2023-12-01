@@ -16,7 +16,7 @@ export class ShopingList extends HTMLElement {
         if (this.shadowRoot) {
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/pages/shopingList/shopingList.css")
+            link.setAttribute("href", "../src/pages/shopingList/shopingList.css")
             this.shadowRoot.appendChild(link)
 
             const mainContainer = this.ownerDocument.createElement("section")

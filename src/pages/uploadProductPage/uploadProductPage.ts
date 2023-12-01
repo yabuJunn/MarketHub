@@ -17,7 +17,7 @@ export class uploadProductPage extends HTMLElement {
             this.shadowRoot.innerHTML = ""
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "/src/pages/uploadProductPage/uploadProductPage.css")
+            link.setAttribute("href", "../src/pages/uploadProductPage/uploadProductPage.css")
             this.shadowRoot.appendChild(link);
 
             const mainContainer = this.ownerDocument.createElement("section");
@@ -37,7 +37,7 @@ export class uploadProductPage extends HTMLElement {
 
             const divInputImage = this.ownerDocument.createElement("div")
             divInputImage.setAttribute("id", "divInputImage")
-            divInputImage.style.backgroundImage = "url(/src/resources/svg/navIcons/dark/uploadDark.svg)"
+            divInputImage.style.backgroundImage = "url(../src/resources/svg/navIcons/dark/uploadDark.svg)"
             inputImageContainer.appendChild(divInputImage)
 
             const inputImage = this.ownerDocument.createElement("input")
