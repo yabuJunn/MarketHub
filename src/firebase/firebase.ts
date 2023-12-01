@@ -129,3 +129,14 @@ export const traerDatabaseProducts = async () => {
   });
   actualizarDataBaseProducts(newProductsArray)
 }
+
+export const pedirProductData = async (productFirebaseID: string, clase: any) => {
+  const docRef = doc(db, "products", productFirebaseID);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    clase.render(docSnap.data())
+  } else {
+    console.log("No such document!");
+  }
+}
