@@ -1,5 +1,6 @@
 import { DocumentData } from "firebase/firestore";
 import { databaseProduct } from "../types/databaseProductsType";
+import { traerDatabaseProducts } from "../firebase/firebase";
 
 export let databaseProducts: Array<databaseProduct | DocumentData> = []
 
@@ -7,4 +8,8 @@ export const reiniciarDatabaseProducts = () => {
     databaseProducts = []
 }
 
-console.log("Cambie git config user")
+export const pedirProducts = async () => {
+    //Especificamente primero el traerDatabaseProducts y luego el reiniciarDatabaseProducts para que no se dupliquen los productos
+    await traerDatabaseProducts()
+    reiniciarDatabaseProducts()
+}
