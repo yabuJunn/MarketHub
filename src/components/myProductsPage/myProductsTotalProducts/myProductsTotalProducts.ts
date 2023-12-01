@@ -1,7 +1,32 @@
+const enum myProductsTotalProperties {
+    total = "total"
+}
+
 export class myProductsTotalProducts extends HTMLElement {
+    properties: Record<myProductsTotalProperties, string> = {
+        total: ""
+    }
+
+    static get observedAttributes() {
+        const properties: Record<myProductsTotalProperties, null> = {
+            total: null
+        }
+        return Object.keys(properties);
+    }
+
     constructor() {
         super()
         this.attachShadow({ mode: "open" })
+    }
+
+    attributeChangedCallback(propName: myProductsTotalProperties, oldValue: string, newValue: string) {
+        switch (propName) {
+            case myProductsTotalProperties.total:
+                this.properties.total = newValue
+                break;
+            default:
+                break;
+        }
     }
 
     connectedCallback() {
@@ -23,32 +48,6 @@ export class myProductsTotalProducts extends HTMLElement {
             totalProductsTitle.innerText = "Total of products"
             mainContainer.appendChild(totalProductsTitle)
 
-            //Products
-            const containerProducts = this.ownerDocument.createElement("div")
-            containerProducts.classList.add("infoContainer")
-            mainContainer.appendChild(containerProducts)
-
-            const productsTitle = this.ownerDocument.createElement("h3")
-            productsTitle.innerText = "Products"
-            containerProducts.appendChild(productsTitle)
-
-            const productsCount = this.ownerDocument.createElement("p")
-            productsCount.innerText = "10"
-            containerProducts.appendChild(productsCount)
-
-            //On Process
-            const containerOnProcess = this.ownerDocument.createElement("div")
-            containerOnProcess.classList.add("infoContainer")
-            mainContainer.appendChild(containerOnProcess)
-
-            const OnProcessTitle = this.ownerDocument.createElement("h3")
-            OnProcessTitle.innerText = "On Process"
-            containerOnProcess.appendChild(OnProcessTitle)
-
-            const OnProcessPrice = this.ownerDocument.createElement("p")
-            OnProcessPrice.innerText = "5"
-            containerOnProcess.appendChild(OnProcessPrice)
-
             //Total Count
             const containerTotal = this.ownerDocument.createElement("div")
             containerTotal.classList.add("infoContainerTotal")
@@ -59,7 +58,7 @@ export class myProductsTotalProducts extends HTMLElement {
             containerTotal.appendChild(totalTitle)
 
             const totalCount = this.ownerDocument.createElement("p")
-            totalCount.innerText = "15"
+            totalCount.innerText = this.properties.total
             containerTotal.appendChild(totalCount)
         }
     }

@@ -79,6 +79,7 @@ export class myProductsPage extends HTMLElement {
             cardsAndInfoContainer.appendChild(moreInfoContainer)
 
             const myProductsTotalProducts = this.ownerDocument.createElement("my_products-total_products")
+            myProductsTotalProducts.setAttribute("total", `${userProductsList.length}`)
             moreInfoContainer.appendChild(myProductsTotalProducts)
 
             const myProductsSearch = this.ownerDocument.createElement("my_products-search")
