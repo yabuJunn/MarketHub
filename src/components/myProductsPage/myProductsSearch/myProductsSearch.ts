@@ -1,4 +1,4 @@
-import { dispatch } from "../../../store"
+import { dispatch, state } from "../../../store"
 import { updateMyProductsSearch } from "../../../store/actions"
 
 export class myProductsSearch extends HTMLElement {
@@ -36,6 +36,7 @@ export class myProductsSearch extends HTMLElement {
 
             const searchInput = this.ownerDocument.createElement("input")
             searchInput.setAttribute("placeholder", "Find your product")
+            searchInput.value = state.myProductsSearch
             searchContainer.appendChild(searchInput)
 
             const deleteFilter = this.ownerDocument.createElement("p")
@@ -45,6 +46,12 @@ export class myProductsSearch extends HTMLElement {
             searchInput.addEventListener("change", () => {
                 dispatch(
                     updateMyProductsSearch(searchInput.value)
+                )
+            })
+
+            deleteFilter.addEventListener("click", () => {
+                dispatch(
+                    updateMyProductsSearch("")
                 )
             })
         }

@@ -63,7 +63,7 @@ export class myProductsPage extends HTMLElement {
             cardsAndInfoContainer.appendChild(myProductsCardsContainer)
 
             userProductsList.forEach((product) => {
-                if (product.name.includes(state.myProductsSearch)) {
+                if (product.name.toLowerCase().includes(state.myProductsSearch.toLowerCase())) {
                     const myProductCard = this.ownerDocument.createElement("my_product-card")
                     myProductCard.setAttribute("title", product.name)
                     myProductCard.setAttribute("desc", product.description)
