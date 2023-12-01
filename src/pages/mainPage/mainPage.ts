@@ -22,6 +22,7 @@ export class MainPage extends HTMLElement {
         if (state.logedUserData.firebaseID === null) {
             await traerDatosUsuarioRegistrado(`${localStorage.getItem("logedFirebaseID")}`)
         }
+        await traerDatabaseProducts()
         this.render()
     }
 
@@ -29,7 +30,6 @@ export class MainPage extends HTMLElement {
         if (this.shadowRoot != null || this.shadowRoot != undefined) {
             console.log("Render MainPage")
             //Especificamente primero el traerDatabaseProducts y luego el reiniciarDatabaseProducts para que no se dupliquen los productos
-            pedirProducts()
 
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")

@@ -75,9 +75,11 @@ class AppContainer extends HTMLElement {
                 case Screens.myProductsPage:
                     const myProductsPage = this.ownerDocument.createElement("my_products-page")
                     this.shadowRoot.appendChild(myProductsPage)
+                    break
                 case Screens.changeDataPage:
                     const changeDataPage = this.ownerDocument.createElement("change_data-page")
                     this.shadowRoot.appendChild(changeDataPage)
+                    break
                 default:
                     break;
             }

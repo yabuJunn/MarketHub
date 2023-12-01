@@ -1,4 +1,9 @@
+import { DocumentData } from "firebase/firestore"
 import "../../components/export"
+import { traerDatabaseProducts } from "../../firebase/firebase"
+import { state } from "../../store"
+import { databaseProduct } from "../../types/databaseProductsType"
+import { databaseProducts, pedirProducts, reiniciarDatabaseProducts } from "../../utilities/databaseProducts"
 
 export class myProductsPage extends HTMLElement {
     constructor() {
@@ -6,12 +11,25 @@ export class myProductsPage extends HTMLElement {
         this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback() {
-        this.render()
+    async connectedCallback() {
+        reiniciarDatabaseProducts()
+        await traerDatabaseProducts()
+        await this.render()
     }
 
-    render() {
+    async render() {
         if (this.shadowRoot) {
+            const userProductsList: Array<databaseProduct | DocumentData> = []
+            console.log("dataBase ForEach")
+            databaseProducts.forEach((product) => {
+                if (product.userFirebaseID === state.logedUserData.firebaseID) {
+                    console.log("Es mio")
+                    userProductsList.push(product)
+                } else {
+                    console.log("No es mio")
+                }
+            });
+
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
             link.setAttribute("href", "/src/pages/myProductsPage/myProductsPage.css")
@@ -44,8 +62,15 @@ export class myProductsPage extends HTMLElement {
             myProductsCardsContainer.setAttribute("id", "myProductsCardsContainer")
             cardsAndInfoContainer.appendChild(myProductsCardsContainer)
 
-            const pruebaMyProductCard = this.ownerDocument.createElement("my_product-card")
-            myProductsCardsContainer.appendChild(pruebaMyProductCard)
+            userProductsList.forEach((product) => {
+                const myProductCard = this.ownerDocument.createElement("my_product-card")
+                myProductCard.setAttribute("title", product.name)
+                myProductCard.setAttribute("desc", product.description)
+                myProductCard.setAttribute("price", product.price)
+                myProductCard.setAttribute("date", product.uploadDate)
+                myProductCard.setAttribute("image", product.imageURL)
+                myProductsCardsContainer.appendChild(myProductCard)
+            })
 
             const moreInfoContainer = this.ownerDocument.createElement("div")
             moreInfoContainer.setAttribute("id", "moreInfoContainer")

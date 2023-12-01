@@ -10,6 +10,6 @@ export const reiniciarDatabaseProducts = () => {
 
 export const pedirProducts = async () => {
     //Especificamente primero el traerDatabaseProducts y luego el reiniciarDatabaseProducts para que no se dupliquen los productos
+    //reiniciarDatabaseProducts()
     await traerDatabaseProducts()
-    reiniciarDatabaseProducts()
 }
