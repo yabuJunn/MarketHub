@@ -6,7 +6,8 @@ const enum searchResultsCardProperties {
     img = "img",
     title = "title",
     price = "price",
-    desc = "desc"
+    desc = "desc",
+    product_firebase_id = "product_firebase_id"
 }
 
 export class searchResultsCard extends HTMLElement {
@@ -14,7 +15,8 @@ export class searchResultsCard extends HTMLElement {
         img: "",
         title: "",
         price: "",
-        desc: ""
+        desc: "",
+        product_firebase_id: ""
     }
 
     static get observedAttributes() {
@@ -22,7 +24,8 @@ export class searchResultsCard extends HTMLElement {
             img: null,
             title: null,
             price: null,
-            desc: null
+            desc: null,
+            product_firebase_id: null
         }
         return Object.keys(properties);
     }
@@ -46,6 +49,9 @@ export class searchResultsCard extends HTMLElement {
             case searchResultsCardProperties.desc:
                 this.properties.desc = newValue
                 break;
+            case searchResultsCardProperties.product_firebase_id:
+                this.properties.product_firebase_id = newValue
+                break
             default:
                 break;
         }
@@ -88,7 +94,7 @@ export class searchResultsCard extends HTMLElement {
 
         cardContainer.addEventListener("click", () => {
             dispatch(
-                changeViewProduct(this.properties.title)
+                changeViewProduct(this.properties.product_firebase_id)
             )
             dispatch(
                 changeScreen(Screens.productDetail)
