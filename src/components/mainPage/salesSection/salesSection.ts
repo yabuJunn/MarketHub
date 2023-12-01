@@ -25,18 +25,21 @@ export class salesSection extends HTMLElement {
             saleCardPhones.setAttribute("image", "/src/resources/jpg/sales/ofertaCelulares.jpg")
             saleCardPhones.setAttribute("text", "50% off")
             saleCardPhones.setAttribute("sub_text", "Phones and Accessories")
+            saleCardPhones.setAttribute("search", "phone")
             salesSectionContainer.appendChild(saleCardPhones)
 
             const saleCardFurniture = this.ownerDocument.createElement("sales-card")
             saleCardFurniture.setAttribute("image", "/src/resources/jpg/sales/ofertaMuebles.jpg")
             saleCardFurniture.setAttribute("text", "60% off")
             saleCardFurniture.setAttribute("sub_text", "Home and Furniture")
+            saleCardFurniture.setAttribute("search", "home")
             salesSectionContainer.appendChild(saleCardFurniture)
 
             const saleCardTV = this.ownerDocument.createElement("sales-card")
             saleCardTV.setAttribute("image", "/src/resources/jpg/sales/ofertaTelevisores.jpg")
             saleCardTV.setAttribute("text", "50% off")
             saleCardTV.setAttribute("sub_text", "TV and Audio")
+            saleCardTV.setAttribute("search", "tv")
             salesSectionContainer.appendChild(saleCardTV)
         }
 

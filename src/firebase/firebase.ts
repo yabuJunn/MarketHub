@@ -1,6 +1,6 @@
 import { firebaseConfig } from "./firebaseConfig";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, updateDoc, getDocs, doc, getDoc, setDoc, DocumentData } from "firebase/firestore";
+import { getFirestore, collection, addDoc, updateDoc, getDocs, doc, getDoc, setDoc, DocumentData, deleteDoc } from "firebase/firestore";
 import { dataUsers } from "../utilities/getDataUsers";
 import { dispatch, state } from "../store";
 import { changeLogedUserData, changeScreen } from "../store/actions";
@@ -139,4 +139,12 @@ export const pedirProductData = async (productFirebaseID: string, clase: any) =>
   } else {
     console.log("No such document!");
   }
+}
+
+export const borrarProduct = async (productFirebaseID: string) => {
+  await deleteDoc(doc(db, "products", productFirebaseID));
+  dispatch(
+    changeScreen(Screens.myProductsPage)
+    )
+  console.log("Se borro")
 }

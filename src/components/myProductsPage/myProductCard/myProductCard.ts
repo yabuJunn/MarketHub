@@ -1,11 +1,13 @@
 import { Timestamp } from "firebase/firestore";
+import { borrarProduct } from "../../../firebase/firebase";
 
 const enum myProductCardProperties {
     title = "title",
     desc = "desc",
     price = "price",
     date = "date",
-    image = "image"
+    image = "image",
+    product_firebase_id = "product_firebase_id"
 }
 
 export class myProductCard extends HTMLElement {
@@ -14,7 +16,8 @@ export class myProductCard extends HTMLElement {
         desc: "",
         price: "",
         date: "",
-        image: ""
+        image: "",
+        product_firebase_id: ""
     }
 
     static get observedAttributes() {
@@ -23,7 +26,8 @@ export class myProductCard extends HTMLElement {
             desc: null,
             price: null,
             date: null,
-            image: null
+            image: null,
+            product_firebase_id: null
         }
         return Object.keys(properties);
     }
@@ -50,6 +54,8 @@ export class myProductCard extends HTMLElement {
             case myProductCardProperties.image:
                 this.properties.image = newValue
                 break;
+            case myProductCardProperties.product_firebase_id:
+                this.properties.product_firebase_id = newValue
             default:
                 break;
         }
@@ -98,7 +104,7 @@ export class myProductCard extends HTMLElement {
             const priceTitle = this.ownerDocument.createElement("h3")
             priceTitle.innerText = "Price"
             priceContainer.appendChild(priceTitle)
-            
+
             const priceDesc = this.ownerDocument.createElement("p")
             priceDesc.innerText = this.properties.price
             priceContainer.appendChild(priceDesc)
@@ -126,6 +132,10 @@ export class myProductCard extends HTMLElement {
             const viewButton = this.ownerDocument.createElement("p")
             viewButton.innerText = "View"
             buttonContainer.appendChild(viewButton)
+
+            deleteButton.addEventListener("click", () => {
+                borrarProduct(this.properties.product_firebase_id)
+            })
         }
 
     }

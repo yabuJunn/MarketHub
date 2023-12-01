@@ -1,21 +1,28 @@
+import { dispatch } from "../../../../store";
+import { changeScreen, changeSeaarchText, changeViewProduct } from "../../../../store/actions";
+import { Screens } from "../../../../types/screens";
+
 const enum SalesCardProperties {
     image = "image",
     text = "text",
-    sub_text = "sub_text"
+    sub_text = "sub_text",
+    search = "search"
 }
 
 export class SalesCard extends HTMLElement {
     properties: Record<SalesCardProperties, string> = {
         image: "",
         text: "",
-        sub_text: ""
+        sub_text: "",
+        search: ""
     }
 
     static get observedAttributes() {
         const properties: Record<SalesCardProperties, null> = {
             image: null,
             text: null,
-            sub_text: null
+            sub_text: null,
+            search: null
         }
         return Object.keys(properties);
     }
@@ -35,6 +42,9 @@ export class SalesCard extends HTMLElement {
                 break;
             case SalesCardProperties.sub_text:
                 this.properties.sub_text = newValue
+                break;
+            case SalesCardProperties.search:
+                this.properties.search = newValue
                 break;
             default:
                 break;
@@ -63,6 +73,15 @@ export class SalesCard extends HTMLElement {
         const subTitleText = this.ownerDocument.createElement("h3")
         subTitleText.innerText = `${this.properties.sub_text}`
         subTitleContainer.appendChild(subTitleText)
+
+        saleCardContainer.addEventListener("click", () => {
+            dispatch(
+                changeSeaarchText(this.properties.search)
+            )
+            dispatch(
+                changeScreen(Screens.searchPage)
+            )
+        })
 
     }
 }
