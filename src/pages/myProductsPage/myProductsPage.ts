@@ -72,7 +72,8 @@ export class myProductsPage extends HTMLElement {
                     const timestampDate = timestamp.toDate()
                     myProductCard.setAttribute("date", `${timestampDate}`)
                     myProductCard.setAttribute("image", product.imageURL)
-                    myProductsCardsContainer.appendChild(myProductCard)  
+                    myProductCard.setAttribute("product_firebase_id", product.productFirebaseID)
+                    myProductsCardsContainer.appendChild(myProductCard)
                 }
             })
 
